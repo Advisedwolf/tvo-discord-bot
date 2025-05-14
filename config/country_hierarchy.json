@@ -1,0 +1,2312 @@
+[
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Afghanistan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Åland Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Albania",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Northern Africa",
+    "Country or Area": "Algeria",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "American Samoa",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Andorra",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Angola",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Anguilla",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Antarctica",
+    "Region 1": "Antarctica",
+    "Country or Area": "Antarctica",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Antigua and Barbuda",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Argentina",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Armenia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Aruba",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Australia and New Zealand",
+    "Country or Area": "Australia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Austria",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Azerbaijan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Bahamas",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Bahrain",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Bangladesh",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Barbados",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Belarus",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Belgium",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "Belize",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Benin",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Bermuda",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Bhutan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Bolivia (Plurinational State of)",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Bonaire, Sint Eustatius and Saba",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Bosnia and Herzegovina",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Southern Africa",
+    "Country or Area": "Botswana",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Bouvet Island",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Brazil",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "British Indian Ocean Territory",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "British Virgin Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Brunei Darussalam",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Bulgaria",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Burkina Faso",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Burundi",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Cabo Verde",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Cambodia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Cameroon",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Atlantic Provinces",
+    "Territory": "Newfoundland and Labrador"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Atlantic Provinces",
+    "Territory": "Prince Edward Island"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Atlantic Provinces",
+    "Territory": "Nova Scotia"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Atlantic Provinces",
+    "Territory": "New Brunswick"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Central Canada",
+    "Territory": "Ontario"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Central Canada",
+    "Territory": "Quebec"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Prairie Provinces",
+    "Territory": "Manitoba"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Prairie Provinces",
+    "Territory": "Saskatchewan"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Prairie Provinces",
+    "Territory": "Alberta"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "West Coast",
+    "Territory": "British Columbia"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Northern Territories",
+    "Territory": "Yukon"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Northern Territories",
+    "Territory": "Northwest Territories"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Canada",
+    "Sub Region": "Northern Territories",
+    "Territory": "Nunavut"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Cayman Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Central African Republic",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Chad",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Chile",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Eastern Asia",
+    "Country or Area": "China",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Eastern Asia",
+    "Country or Area": "China, Hong Kong Special Administrative Region",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Eastern Asia",
+    "Country or Area": "China, Macao Special Administrative Region",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Australia and New Zealand",
+    "Country or Area": "Christmas Island",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Australia and New Zealand",
+    "Country or Area": "Cocos (Keeling) Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Colombia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Comoros",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Congo",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Cook Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "Costa Rica",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Côte d’Ivoire",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Croatia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Cuba",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Curaçao",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Cyprus",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Czechia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Eastern Asia",
+    "Country or Area": "Democratic People's Republic of Korea",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Democratic Republic of the Congo",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Denmark",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Djibouti",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Dominica",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Dominican Republic",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Ecuador",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Northern Africa",
+    "Country or Area": "Egypt",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "El Salvador",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Equatorial Guinea",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Eritrea",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Estonia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Southern Africa",
+    "Country or Area": "Eswatini",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Ethiopia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Falkland Islands (Malvinas)",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Faroe Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Melanesia",
+    "Country or Area": "Fiji",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Finland",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "France",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "French Guiana",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "French Polynesia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "French Southern Territories",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Gabon",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Gambia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Georgia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Germany",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Ghana",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Gibraltar",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Greece",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "Greenland",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Grenada",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Guadeloupe",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "Guam",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "Guatemala",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Guernsey",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Guinea",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Guinea-Bissau",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Guyana",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Haiti",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Australia and New Zealand",
+    "Country or Area": "Heard Island and McDonald Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Holy See",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "Honduras",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Hungary",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Iceland",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "India",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Indonesia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Iran (Islamic Republic of)",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Iraq",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Ireland",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Isle of Man",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Israel",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Italy",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Jamaica",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Eastern Asia",
+    "Country or Area": "Japan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Jersey",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Jordan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Central Asia",
+    "Country or Area": "Kazakhstan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Kenya",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "Kiribati",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Kuwait",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Central Asia",
+    "Country or Area": "Kyrgyzstan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Lao People's Democratic Republic",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Latvia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Lebanon",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Southern Africa",
+    "Country or Area": "Lesotho",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Liberia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Northern Africa",
+    "Country or Area": "Libya",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Liechtenstein",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Lithuania",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Luxembourg",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Madagascar",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Malawi",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Malaysia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Maldives",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Mali",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Malta",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "Marshall Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Martinique",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Mauritania",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Mauritius",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Mayotte",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "Mexico",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "Micronesia (Federated States of)",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Monaco",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Eastern Asia",
+    "Country or Area": "Mongolia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Montenegro",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Montserrat",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Northern Africa",
+    "Country or Area": "Morocco",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Mozambique",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Myanmar",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Southern Africa",
+    "Country or Area": "Namibia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "Nauru",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Nepal",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Netherlands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Melanesia",
+    "Country or Area": "New Caledonia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Australia and New Zealand",
+    "Country or Area": "New Zealand",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "Nicaragua",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Niger",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Nigeria",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Niue",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Australia and New Zealand",
+    "Country or Area": "Norfolk Island",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "North Macedonia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "Northern Mariana Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Norway",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Oman",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Pakistan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "Palau",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Central America",
+    "Country or Area": "Panama",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Melanesia",
+    "Country or Area": "Papua New Guinea",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Paraguay",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Peru",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Philippines",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Pitcairn",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Poland",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Portugal",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Puerto Rico",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Qatar",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Eastern Asia",
+    "Country or Area": "Republic of Korea",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Republic of Moldova",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Réunion",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Romania",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Central Federal District ",
+    "Territory": "Moscow Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Central Federal District ",
+    "Territory": "Tula Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Central Federal District ",
+    "Territory": "Tver Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Central Federal District ",
+    "Territory": "Yaroslavl Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Northwestern Federal District ",
+    "Territory": "Saint Petersburg"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Northwestern Federal District ",
+    "Territory": "Leningrad Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Northwestern Federal District ",
+    "Territory": "Novgorod Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Southern Federal District ",
+    "Territory": "Rostov Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Southern Federal District ",
+    "Territory": "Krasnodar Krai"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Southern Federal District ",
+    "Territory": "Stavropol Krai"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "North Caucasian Federal District ",
+    "Territory": "Chechen Republic"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "North Caucasian Federal District ",
+    "Territory": "Dagestan Republic"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "North Caucasian Federal District ",
+    "Territory": "Stavropol Krai"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Volga Federal District ",
+    "Territory": "Nizhny Novgorod Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Volga Federal District ",
+    "Territory": "Kazan Republic"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Volga Federal District ",
+    "Territory": "Samara Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Ural Federal District ",
+    "Territory": "Yekaterinburg (Sverdlovsk Oblast)"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Ural Federal District ",
+    "Territory": "Chelyabinsk Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Siberian Federal District ",
+    "Territory": "Novosibirsk Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Siberian Federal District ",
+    "Territory": "Irkutsk Oblast"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Siberian Federal District ",
+    "Territory": "Krasnoyarsk Krai"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Far Eastern Federal District ",
+    "Territory": "Primorsky Krai"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Far Eastern Federal District ",
+    "Territory": "Khabarovsk Krai"
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Russian Federation",
+    "Sub Region": "Far Eastern Federal District ",
+    "Territory": "Sakhalin Oblast"
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Rwanda",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Samoa",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "San Marino",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Central Africa",
+    "Country or Area": "Sao Tome and Principe",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Sark",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Saudi Arabia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Senegal",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Serbia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Seychelles",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Sierra Leone",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Singapore",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Sint Maarten (Dutch part)",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Slovakia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Slovenia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Melanesia",
+    "Country or Area": "Solomon Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Somalia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Southern Africa",
+    "Country or Area": "South Africa",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "South Georgia and the South Sandwich Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "South Sudan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Southern Europe",
+    "Country or Area": "Spain",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Southern Asia",
+    "Country or Area": "Sri Lanka",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "State of Palestine",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Northern Africa",
+    "Country or Area": "Sudan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Suriname",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Svalbard and Jan Mayen Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "Sweden",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Western Europe",
+    "Country or Area": "Switzerland",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Syrian Arab Republic",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Central Asia",
+    "Country or Area": "Tajikistan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Thailand",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Timor-Leste",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Western Africa",
+    "Country or Area": "Togo",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Tokelau",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Tonga",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Trinidad and Tobago",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Northern Africa",
+    "Country or Area": "Tunisia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Turkey",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Central Asia",
+    "Country or Area": "Turkmenistan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "Turks and Caicos Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Tuvalu",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Uganda",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Eastern Europe",
+    "Country or Area": "Ukraine",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "United Arab Emirates",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Europe",
+    "Region 1": "Northern Europe",
+    "Country or Area": "United Kingdom of Great Britain and Northern Ireland",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "United Republic of Tanzania",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Micronesia",
+    "Country or Area": "United States Minor Outlying Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Connecticut"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Maine"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Massachusetts"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "New Hampshire"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Rhode Island"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Vermont"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "New Jersey"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "New York"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Pennsylvania"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Delaware"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Maryland"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Washington D.C."
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Virginia"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "West Virginia"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "North Carolina"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "South Carolina"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Georgia"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "East",
+    "Territory": "Florida"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Ohio"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Michigan"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Indiana"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Illinois"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Wisconsin"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Minnesota"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Iowa"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Missouri"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "North Dakota"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "South Dakota"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Nebraska"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Kansas"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Kentucky"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Tennessee"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Mississippi"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Alabama"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Arkansas"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Central",
+    "Territory": "Louisiana"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Montana"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Idaho"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Wyoming"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Colorado"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "New Mexico"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Arizona"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Utah"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Nevada"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Washington"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Oregon"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "California"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": " Alaska"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "West",
+    "Territory": "Hawaii"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Territories",
+    "Territory": "Puerto Rico"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Territories",
+    "Territory": "Guam"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Territories",
+    "Territory": "U.S. Virgin Islands"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Territories",
+    "Territory": "American Samoa"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Northern America",
+    "Country or Area": "United States of America",
+    "Sub Region": "Territories",
+    "Territory": "Northern Mariana Islands"
+  },
+  {
+    "Continent": "North America",
+    "Region 1": "Caribbean",
+    "Country or Area": "United States Virgin Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Uruguay",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Central Asia",
+    "Country or Area": "Uzbekistan",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Melanesia",
+    "Country or Area": "Vanuatu",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "South America",
+    "Region 1": "South America",
+    "Country or Area": "Venezuela (Bolivarian Republic of)",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "South-eastern Asia",
+    "Country or Area": "Viet Nam",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Oceania",
+    "Region 1": "Polynesia",
+    "Country or Area": "Wallis and Futuna Islands",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Northern Africa",
+    "Country or Area": "Western Sahara",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Asia",
+    "Region 1": "Western Asia",
+    "Country or Area": "Yemen",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Zambia",
+    "Sub Region": null,
+    "Territory": null
+  },
+  {
+    "Continent": "Africa",
+    "Region 1": "Eastern Africa",
+    "Country or Area": "Zimbabwe",
+    "Sub Region": null,
+    "Territory": null
+  }
+]

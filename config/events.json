@@ -1,0 +1,119 @@
+{
+  "monster_hunting": {
+    "label": "Monster Hunting",
+    "category": "SLE Phases",
+    "type": "single",
+    "durationHours": 48,
+    "defaultDay": "Monday"
+  },
+  "power_on": {
+    "label": "Power On",
+    "category": "SLE Phases",
+    "type": "single",
+    "durationHours": 24,
+    "defaultDay": "Wednesday"
+  },
+  "recruitment": {
+    "label": "Recruitment",
+    "category": "SLE Phases",
+    "type": "single",
+    "durationHours": 48,
+    "defaultDay": "Thursday"
+  },
+  "resource_collecting": {
+    "label": "Resource Collecting",
+    "category": "SLE Phases",
+    "type": "single",
+    "durationHours": 24,
+    "defaultDay": "Saturday"
+  },
+  "kill_event": {
+    "label": "Kill Event",
+    "category": "SLE Phases",
+    "type": "single",
+    "durationHours": 24,
+    "defaultDay": "Sunday"
+  },
+  "territory_defence": {
+    "label": "Territory Defence",
+    "category": "Alliance Events",
+    "type": "single",
+    "durationHours": 90,
+    "defaultDay": "Saturday"
+  },
+  "elite_adventures": {
+    "label": "Elite Adventures",
+    "category": "Alliance Events",
+    "type": "single",
+    "durationHours": 60,
+    "defaultDay": "Sunday"
+  },
+  "fortress_wars": {
+    "label": "Fortress Wars",
+    "category": "Alliance Events",
+    "type": "single",
+    "durationHours": 60
+  },
+  "elite_wars": {
+    "label": "Elite Wars",
+    "category": "Alliance Events",
+    "type": "single",
+    "durationHours": 45
+  },
+  "realm_invasion": {
+    "label": "Realm Invasion",
+    "category": "Round-Based Events",
+    "type": "round-based",
+    "rounds": [
+      "04:00",
+      "11:00",
+      "18:00"
+    ]
+  },
+  "savage_lands": {
+    "label": "Savage Lands",
+    "category": "Round-Based Events",
+    "type": "round-based",
+    "rounds": [
+      "04:00",
+      "11:00",
+      "18:00"
+    ]
+  },
+  "wilderness_wars": {
+    "label": "Wilderness Wars",
+    "category": "Round-Based Events",
+    "type": "round-based",
+    "rounds": [
+      "04:00",
+      "11:00",
+      "18:00"
+    ]
+  },
+  "brave_valley": {
+    "label": "Brave Valley",
+    "category": "World Events",
+    "type": "multi-day",
+    "phases": [
+      "defense",
+      "attack"
+    ],
+    "durationHours": 24
+  },
+  "war_of_frontiers": {
+    "label": "War of Frontiers",
+    "category": "World Events",
+    "type": "multi-day",
+    "phases": [
+      "defense",
+      "attack"
+    ],
+    "durationHours": 24
+  },
+  "custom": {
+    "label": "Custom Event",
+    "category": "Other",
+    "type": "custom",
+    "description": "User-defined event."
+  }
+}

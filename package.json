@@ -9,7 +9,8 @@
     "start": "node index.js",
     "test": "mocha \"tests/**/*.spec.js\"",
     "lint": "eslint \"src/**/*.{js,ts}\"",
-    "format": "prettier --write \"**/*.{js,json,md}\""
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "typecheck": "tsc --noEmit"
   },
   "lint": "eslint \"src/**/*.{js,ts}\"",
   "format": "prettier --write \"**/*.{js,json,md}\"",

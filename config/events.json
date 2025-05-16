@@ -64,50 +64,32 @@
     "label": "Realm Invasion",
     "category": "Round-Based Events",
     "type": "round-based",
-    "rounds": [
-      "04:00",
-      "11:00",
-      "18:00"
-    ]
+    "rounds": ["04:00", "11:00", "18:00"]
   },
   "savage_lands": {
     "label": "Savage Lands",
     "category": "Round-Based Events",
     "type": "round-based",
-    "rounds": [
-      "04:00",
-      "11:00",
-      "18:00"
-    ]
+    "rounds": ["04:00", "11:00", "18:00"]
   },
   "wilderness_wars": {
     "label": "Wilderness Wars",
     "category": "Round-Based Events",
     "type": "round-based",
-    "rounds": [
-      "04:00",
-      "11:00",
-      "18:00"
-    ]
+    "rounds": ["04:00", "11:00", "18:00"]
   },
   "brave_valley": {
     "label": "Brave Valley",
     "category": "World Events",
     "type": "multi-day",
-    "phases": [
-      "defense",
-      "attack"
-    ],
+    "phases": ["defense", "attack"],
     "durationHours": 24
   },
   "war_of_frontiers": {
     "label": "War of Frontiers",
     "category": "World Events",
     "type": "multi-day",
-    "phases": [
-      "defense",
-      "attack"
-    ],
+    "phases": ["defense", "attack"],
     "durationHours": 24
   },
   "custom": {

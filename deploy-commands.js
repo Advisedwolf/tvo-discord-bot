@@ -1,55 +1,107 @@
-// deploy-commands.js
-// Registers (or updates) slash commands for your guild
+import "dotenv/config";
+import fs from "fs";
+import path from "path";
+import { pathToFileURL } from "url";
+import { REST, Routes } from "discord.js";
 
-require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
-
-// Load environment variables
 const token = process.env.DISCORD_TOKEN;
 const clientId = process.env.CLIENT_ID;
 const guildId = process.env.GUILD_ID;
 
-// Commands directory
-const commandsPath = path.join(__dirname, 'src', 'commands');
+if (!token || !clientId || !guildId) {
+  console.error(
+    "Missing DISCORD_TOKEN, CLIENT_ID, or GUILD_ID in environment variables.",
+  );
+  process.exit(1);
+}
 
-// Collect all command modules
-const commandFiles = fs
-  .readdirSync(commandsPath)
-  .filter(file => file.endsWith('.js'));
+const rest = new REST({ version: "10" }).setToken(token);
 
-const commands = [];
-// Auto-load all commands except profile and alerts (we'll add those explicitly)
-for (const file of commandFiles) {
-  if (['profile.js', 'alerts.js'].includes(file)) continue;
-  const command = require(path.join(commandsPath, file));
-  if ('data' in command && typeof command.data.toJSON === 'function') {
-    commands.push(command.data.toJSON());
+/**
+ * Recursively collects all .js files under a directory.
+ * @param {string} dir - The directory to search.
+ * @returns {string[]} - Array of absolute file paths.
+ */
+function getCommandFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((dirent) => {
+    const fullPath = path.join(dir, dirent.name);
+    if (dirent.isDirectory()) {
+      return getCommandFiles(fullPath);
+    } else if (dirent.isFile() && dirent.name.endsWith(".js")) {
+      return [fullPath];
+    }
+    return [];
+  });
+}
+
+/**
+ * Dynamically imports and returns command data objects from all .js files in a directory.
+ * @param {string} dirPath
+ * @returns {Promise<Array>} - Array of command JSON data
+ */
+async function loadCommandsFromDir(dirPath) {
+  const commands = [];
+  const files = getCommandFiles(dirPath);
+
+  for (const filePath of files) {
+    try {
+      const commandModule = await import(pathToFileURL(filePath).href);
+      const commandData = commandModule.data || commandModule.default?.data;
+      if (!commandData) {
+        console.warn(`Skipping command at ${filePath}: missing 'data' export.`);
+        continue;
+      }
+      if (typeof commandData.toJSON !== "function") {
+        console.warn(
+          `Skipping command at ${filePath}: 'data' export missing toJSON method.`,
+        );
+        continue;
+      }
+      commands.push(commandData.toJSON());
+      console.log(`Loaded command from ${filePath}`);
+    } catch (err) {
+      console.error(`Failed to load command at ${filePath}:`, err);
+    }
+  }
+
+  return commands;
+}
+
+async function main() {
+  try {
+    const prodCommandsDir = path.join(process.cwd(), "src", "commands");
+    const testCommandsDir = path.join(process.cwd(), "tests", "commands");
+
+    const prodCommands = await loadCommandsFromDir(prodCommandsDir);
+    const testCommands =
+      process.env.NODE_ENV === "test"
+        ? await loadCommandsFromDir(testCommandsDir)
+        : [];
+
+    // Combine and dedupe by name
+    const allCommands = [];
+    const seen = new Set();
+    for (const cmd of [...prodCommands, ...testCommands]) {
+      if (seen.has(cmd.name)) {
+        console.warn(`Duplicate command skipped: ${cmd.name}`);
+        continue;
+      }
+      seen.add(cmd.name);
+      allCommands.push(cmd);
+    }
+
+    console.log(
+      `Registering ${allCommands.length} commands to guild ${guildId}...`,
+    );
+    await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+      body: allCommands,
+    });
+    console.log("Successfully registered application commands.");
+  } catch (error) {
+    console.error("Error registering commands:", error);
+    process.exit(1);
   }
 }
 
-// Explicitly add profile and alerts commands
-const profileCommand = require(path.join(commandsPath, 'profile.js'));
-const alertsCommand  = require(path.join(commandsPath, 'alerts.js'));
-commands.push(profileCommand.data.toJSON());
-commands.push(alertsCommand.data.toJSON());
-
-// Instantiate REST client
-const rest = new REST({ version: '9' }).setToken(token);
-
-(async () => {
-  try {
-    console.log(`Registering ${commands.length} slash commands to guild ${guildId}...`);
-
-    await rest.put(
-      Routes.applicationGuildCommands(clientId, guildId),
-      { body: commands }
-    );
-
-    console.log('Successfully registered application commands.');
-  } catch (error) {
-    console.error('Error registering commands:', error);
-  }
-})();
+main();

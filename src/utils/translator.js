@@ -1,83 +1,56 @@
+// src/utils/translator.js
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const fs = require('fs');
-const path = require('path');
-const { Translator } = require('deepl-node');
-const logger = require('./logger');
+// Determine __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const translator = new Translator(process.env.DEEPL_API_KEY);
-const localesDir = path.resolve(__dirname, '../../config');
+const DEFAULT_LOCALE = "en";
+const LOCALES_DIR = path.resolve(__dirname, "../config/locales");
+let cache = {};
 
-
-// Load and parse a locale file every time (no caching)
+/**
+ * Load a locale file (with caching).
+ */
 function loadLocale(locale) {
-  try {
-    const filePath = path.join(localesDir, `${locale}.json`);
-logger.debug(`Looking for locale file: ${filePath}`, 'i18n');
-    if (fs.existsSync(filePath)) {
-      return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    }
-  } catch (err) {
-    logger.error(`Failed to load ${locale}.json: ${err.message}`, 'i18n');
-  }
-  return {};
-}
-
-// Moved outside to be globally accessible
-function resolveKey(obj, path) {
-  if (!obj || typeof obj !== 'object') return undefined;
-  return path.split('.').reduce((acc, part) => {
-    if (acc && typeof acc === 'object' && part in acc) {
-      return acc[part];
-    }
-    return undefined;
-  }, obj);
-}
-
-// Translation function
-function t(key, locale = 'en', params = {}) {
-  const messages = loadLocale(locale);
-  const fallback = loadLocale('en');
-logger.debug(`Key: ${key}`, 'i18n');
-logger.debug(`Locale: ${locale}`, 'i18n');
-
-  let template = resolveKey(messages, key) || resolveKey(fallback, key) || key;
-logger.debug(`Resolved from locale: ${resolveKey(messages, key)}`, 'i18n');
-logger.debug(`Resolved from fallback: ${resolveKey(fallback, key)}`, 'i18n');
-  return template.replace(/\{(\w+)\}/g, (_, p) =>
-    params[p] !== undefined ? params[p] : `{${p}}`
-  );
-}
-
-// DeepL optional translation utility
-async function translateToLocale(key, locale) {
-  const base = loadLocale('en');
-  const text = resolveKey(base, key) || key;
-  if (locale === 'en') return text;
+  if (cache[locale]) return cache[locale];
 
   try {
-    const result = await translator.translateText(text, null, locale);
-    const translated = result.text;
-
-    const target = loadLocale(locale);
-    let current = target;
-    const parts = key.split('.');
-    for (let i = 0; i < parts.length - 1; i++) {
-      if (!current[parts[i]]) current[parts[i]] = {};
-      current = current[parts[i]];
-    }
-    current[parts[parts.length - 1]] = translated;
-
-    fs.writeFileSync(
-      path.join(localesDir, `${locale}.json`),
-      JSON.stringify(target, null, 2),
-      'utf-8'
+    const data = fs.readFileSync(
+      path.join(LOCALES_DIR, `${locale}.json`),
+      "utf-8",
     );
-
-    return translated;
+    cache[locale] = JSON.parse(data);
   } catch (err) {
-    logger.error(`DeepL error (${key}, ${locale}): ${err.message}`, 'i18n');
-    return text;
+    console.warn(
+      `⚠️  Locale file for "${locale}" not found, falling back to "${DEFAULT_LOCALE}".`,
+    );
+    if (locale !== DEFAULT_LOCALE) {
+      cache[locale] = loadLocale(DEFAULT_LOCALE);
+    } else {
+      cache[locale] = {};
+    }
   }
+
+  return cache[locale];
 }
 
-module.exports = { t, translateToLocale };
+/**
+ * Translate a key with optional params and locale.
+ * @param {string} key      — e.g. "ping.success"
+ * @param {object} [params] — e.g. { user: 'Alice' }
+ * @param {string} [locale] — e.g. 'es'
+ */
+export function t(key, params = {}, locale = DEFAULT_LOCALE) {
+  const messages = loadLocale(locale);
+  let str = messages[key] ?? key;
+
+  // Simple {param} interpolation
+  Object.entries(params).forEach(([k, v]) => {
+    str = str.replaceAll(`{${k}}`, v);
+  });
+
+  return str;
+}

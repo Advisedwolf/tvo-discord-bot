@@ -1,54 +1,110 @@
 // index.js
-// Bot entrypoint: loads commands, services, events, and schedulers
+import "dotenv/config"; // loads .env
+import { connectDB } from "./src/models/db.js"; // MongoDB connector
+import { Client, GatewayIntentBits, Partials } from "discord.js";
+import slashHandler from "./src/handlers/slashHandler.js";
+import buttonHandler from "./src/handlers/buttonHandler.js";
+import selectMenuHandler from "./src/handlers/selectMenuHandler.js";
+import modalHandler from "./src/handlers/modalHandler.js";
+import userContextMenuHandler from "./src/handlers/userContextMenuHandler.js";
+import messageContextMenuHandler from "./src/handlers/messageContextMenuHandler.js";
+import testSlashHandler from "./tests/handlers/testSlashHandler.js";
+import testButtonHandler from "./tests/handlers/testButtonHandler.js";
+import testSelectMenuHandler from "./tests/handlers/testSelectMenuHandler.js";
+import testModalHandler from "./tests/handlers/testModalHandler.js";
+import testUserContextMenuHandler from "./tests/handlers/testUserContextMenuHandler.js";
+import testMessageContextMenuHandler from "./tests/handlers/testMessageContextMenuHandler.js";
+import { loadCommands } from "./src/handlers/commandHandler.js";
+import logger from "./src/utils/logger.js";
+import { replyError } from "./src/utils/replyHelpers.js";
 
-require('dotenv').config();
-const { Client, GatewayIntentBits, Partials } = require('discord.js');
-const fs = require('fs');
-const path = require('path');
-const logger = require('./src/utils/logger');
-require('./src/database');
+const env = process.env.NODE_ENV || "live";
+console.log(`Environment: ${env}`);
 
-const CommandHandler = require('./handlers/commandHandler');
-const ServiceHandler = require('./handlers/serviceHandler');
+async function main() {
+  // 1) Connect to your MongoDB before anything else
+  await connectDB();
 
-// Create Discord client with necessary intents and partials
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.GuildMessageReactions
-  ],
-  partials: [
-    Partials.Channel,
-    Partials.Message,
-    Partials.Reaction
-  ]
-});
+  // 2) Instantiate Discord client
+  const client = new Client({
+    intents: [
+      GatewayIntentBits.Guilds,
+      GatewayIntentBits.GuildMessages,
+      GatewayIntentBits.GuildMessageReactions,
+      GatewayIntentBits.MessageContent,
+    ],
+    partials: [Partials.Message, Partials.Channel, Partials.Reaction],
+  });
 
-// Load commands and services
-CommandHandler.loadCommands(client);
-ServiceHandler.loadServices(client);
+  // 3) Wire up handlers based on environment
+  if (env === "test") {
+    client.slashHandler = testSlashHandler;
+    client.buttonHandler = testButtonHandler;
+    client.selectMenuHandler = testSelectMenuHandler;
+    client.modalHandler = testModalHandler;
+    client.userContextMenuHandler = testUserContextMenuHandler;
+    client.messageContextMenuHandler = testMessageContextMenuHandler;
+  } else {
+    client.slashHandler = slashHandler;
+    client.buttonHandler = buttonHandler;
+    client.selectMenuHandler = selectMenuHandler;
+    client.modalHandler = modalHandler;
+    client.userContextMenuHandler = userContextMenuHandler;
+    client.messageContextMenuHandler = messageContextMenuHandler;
+  }
 
-// Dynamically register event handlers from src/events
-const eventsPath = path.join(__dirname, 'src', 'events');
-fs.readdirSync(eventsPath)
-  .filter(file => file.endsWith('.js'))
-  .forEach(file => {
-    const event = require(path.join(eventsPath, file));
-    if (event.once) {
-      client.once(event.name, (...args) => event.execute(client, ...args));
-    } else {
-      client.on(event.name, (...args) => event.execute(client, ...args));
+  console.log("Slash Handler loaded:", !!client.slashHandler);
+  console.log("Button Handler loaded:", !!client.buttonHandler);
+  console.log("Select Menu Handler loaded:", !!client.selectMenuHandler);
+  console.log("Modal Handler loaded:", !!client.modalHandler);
+  console.log(
+    "User Context Menu Handler loaded:",
+    !!client.userContextMenuHandler,
+  );
+  console.log(
+    "Message Context Menu Handler loaded:",
+    !!client.messageContextMenuHandler,
+  );
+
+  // 4) Delegate interactions
+  client.on("interactionCreate", async (interaction) => {
+    try {
+      if (interaction.isChatInputCommand()) {
+        await client.slashHandler.handle(interaction);
+      } else if (interaction.isButton()) {
+        await client.buttonHandler.handle(interaction);
+      } else if (interaction.isStringSelectMenu()) {
+        await client.selectMenuHandler.handle(interaction);
+      } else if (interaction.isModalSubmit()) {
+        await client.modalHandler.handle(interaction);
+      } else if (interaction.isUserContextMenuCommand()) {
+        await client.userContextMenuHandler.handle(interaction);
+      } else if (interaction.isMessageContextMenuCommand()) {
+        await client.messageContextMenuHandler.handle(interaction);
+      }
+    } catch (err) {
+      // English logging for debugging
+      console.error("Error handling interaction:", err);
+      // Localized error response for the user
+      await replyError(interaction);
     }
   });
 
-// Global error handling
-process.on('unhandledRejection', err => {
-  logger.error(`Unhandled Rejection: ${err.message}`, 'startup');
-});
+  // 5) Load commands and login
+  try {
+    await loadCommands(client, env);
+    await client.login(process.env.DISCORD_TOKEN);
+    logger.info(`[startup] ✅ Bot logged in as ${client.user.tag}`);
+  } catch (err) {
+    logger.error(`[startup] Error starting bot: ${err.message}`, "startup");
+    process.exit(1);
+  }
 
-// Login to Discord
-client.login(process.env.DISCORD_TOKEN)
-  .then(() => logger.info(`✅ Bot logged in as ${client.user.tag}`, 'startup'))
-  .catch(err => logger.error(`❌ Login failed: ${err.message}`, 'startup'));
+  // 6) Handle unhandled promise rejections
+  process.on("unhandledRejection", (err) => {
+    logger.error(`Unhandled Rejection: ${err.message}`, "runtime");
+  });
+}
+
+// Kick it all off
+main();

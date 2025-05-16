@@ -1,37 +1,18 @@
-const mongoose = require('mongoose');
+// src/models/UserProfile.js
+import { Schema, model } from "mongoose";
 
-const UserProfileSchema = new mongoose.Schema({
-  userId: { type: String, required: true, unique: true },
-
-  // Onboarding info
-  country:              { type: String, default: '' },
-  timezone:             { type: String, default: '' },
-  locale:               { type: String, default: '' },
-  consented:            { type: Boolean, default: false },
-  ageRange:             { type: String, default: '' },
-  bio:                  { type: String, default: '' },
-  gamingExperience:     { type: Number, default: 0 },    // Years of play
-  farms:                { type: String, default: '' },   // “0”, “1”, “2-4”, etc.  // Alert subscriptions
-
-
-  alertSubscriptions: {
-    scout:   { type: Boolean, default: false },
-    attack:  { type: Boolean, default: false },
-    event:   { type: Boolean, default: false }
-  },
-  alertSubscriptionsGlobal: { type: Boolean, default: false },
-
-  // Event scheduling preferences
-  allianceRuinsTime:    { type: String, default: '' },
-  attendance: {
-    elite:     { type: String, default: '' },
-    territory: { type: String, default: '' }
-  },
-
-  // Final onboarding flag
-  completed:            { type: Boolean, default: false },
-  createdAt:            { type: Date,   default: Date.now }
+/**
+ * UserProfile schema:
+ *  - discordId: unique Discord user ID
+ *  - locale: user's preferred locale code
+ *  - joinedAt: date they first interacted with bot
+ *  - data: arbitrary JSON for future use
+ */
+const userProfileSchema = new Schema({
+  discordId: { type: String, required: true, unique: true },
+  locale: { type: String, default: "en" },
+  joinedAt: { type: Date, default: Date.now },
+  data: { type: Schema.Types.Mixed, default: {} },
 });
 
-module.exports = mongoose.model('UserProfile', UserProfileSchema);
-
+export const UserProfile = model("UserProfile", userProfileSchema);

@@ -1,0 +1,5 @@
+{
+  "ping.success": "¡Pong!",
+  "profile.greeting": "¡Hola, {user}!",
+  "error.generic": "Ocurrió un error inesperado."
+}

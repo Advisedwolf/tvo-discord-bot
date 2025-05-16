@@ -16,81 +16,120 @@
     "ruinsTimePrompt": "\u23f0 Preferred Alliance Ruins start time?",
     "eventAttendancePrompt": "\ud83d\udcc5 How often do you attend **{event}**?",
     "timezonePrompt": "\ud83c\udf0d Select your current time zone from the list below:",
-    "selectRegion":     "🌍 Select your continent",
-    "selectSubregion":  "🌐 Select your subregion",
-    "selectCountry":    "🏳️ Select your country",
-    "selectSubdivision":"🏙️ Select your state/province",
-    "subdivisionConfirm":"✅ You selected: {subdivision}",
-    "selectTimezone":   "⏰ Select your local time zone",
+    "selectRegion": "🌍 Select your continent",
+    "selectSubregion": "🌐 Select your subregion",
+    "selectCountry": "🏳️ Select your country",
+    "selectSubdivision": "🏙️ Select your state/province",
+    "subdivisionConfirm": "✅ You selected: {subdivision}",
+    "selectTimezone": "⏰ Select your local time zone",
     "selectExperience": "🎮 How many years of gaming experience do you have?",
     "experienceConfirm": "✅ Gaming experience set to {years} years.",
     "selectFarms": "🌾 How many farms do you run?",
     "farmsConfirm": "✅ You indicated: {farms} farms.",
-    "formTitle":   "🚨 Reap the Benefits—Join Our Alerts System!",
-    "benefits":    "• Receive timely alerts direct to your inbox\n• Never miss an event; always be ready to defend\n• Better engagement and game awareness",
-    "join":        "Join",
-    "abstain":     "Abstain",
-    "proceed":     "Proceed",
+    "formTitle": "🚨 Reap the Benefits—Join Our Alerts System!",
+    "benefits": "• Receive timely alerts direct to your inbox\n• Never miss an event; always be ready to defend\n• Better engagement and game awareness",
+    "join": "Join",
+    "abstain": "Abstain",
+    "proceed": "Proceed",
     "confirmProceed": "✅ Your alert preferences have been saved!",
-    "ruinsTitle":      "⛩️ Select Your Preferred Alliance Ruins Time",
-    "ruinsDesc":       "Pick the Alliance Ruins time you’d like to participate in:",
+    "ruinsTitle": "⛩️ Select Your Preferred Alliance Ruins Time",
+    "ruinsDesc": "Pick the Alliance Ruins time you’d like to participate in:",
     "selectRuinsTime": "Which Ruins time suits you?",
-    "ruinsNone":       "None of these times suit me",
-    "ruinsConfirm":    "✅ Preferred Ruins time set to {time}.",
+    "ruinsNone": "None of these times suit me",
+    "ruinsConfirm": "✅ Preferred Ruins time set to {time}.",
     "vows": {
       "title": "\uD83D\uDDDC VOWS OF THE ORDER – OUR SHARED OATH",
       "subtitle": "“When you raise our banner, you take our vow — to uphold the spirit and strength of The Vigilant Order.”",
-      "respect":    { "title": "Respect",    "desc": "We value every player, every background. Disrespect is weakness. We rise by lifting others." },
-      "growth":     { "title": "Growth",     "desc": "From the smallest castle to the most seasoned warrior, we grow together — but only with those hungry for it." },
-      "engagement": { "title": "Engagement", "desc": "Active minds, active battles. Communication is our strongest weapon." },
-      "teamwork":   { "title": "Teamwork",   "desc": "No lone wolves. True strength is forged in unity, not ego." },
-      "commitment": { "title": "Commitment", "desc": "Show up. Be present. Take part. The Order isn’t a tag — it’s a responsibility." },
-      "agree":      "I Agree",
-      "decline":    "I Decline",
-      "confirmed":  "\u2705 You have agreed to the VOWs of The Order!",
-      "declined":   "\u274C You must agree to the VOWs to continue."
-   },
-   "coc": {
-      "title":    "\u2696 CODE OF CONDUCT – THE ORDER’S EXPECTATIONS",
+      "respect": {
+        "title": "Respect",
+        "desc": "We value every player, every background. Disrespect is weakness. We rise by lifting others."
+      },
+      "growth": {
+        "title": "Growth",
+        "desc": "From the smallest castle to the most seasoned warrior, we grow together — but only with those hungry for it."
+      },
+      "engagement": {
+        "title": "Engagement",
+        "desc": "Active minds, active battles. Communication is our strongest weapon."
+      },
+      "teamwork": {
+        "title": "Teamwork",
+        "desc": "No lone wolves. True strength is forged in unity, not ego."
+      },
+      "commitment": {
+        "title": "Commitment",
+        "desc": "Show up. Be present. Take part. The Order isn’t a tag — it’s a responsibility."
+      },
+      "agree": "I Agree",
+      "decline": "I Decline",
+      "confirmed": "\u2705 You have agreed to the VOWs of The Order!",
+      "declined": "\u274C You must agree to the VOWs to continue."
+    },
+    "coc": {
+      "title": "\u2696 CODE OF CONDUCT – THE ORDER’S EXPECTATIONS",
       "subtitle": "We are disciplined. We are prepared. We play with pride.",
-     "respect":    { "title": "Respect is Mandatory", "desc": "Global alliance. Diverse voices. Zero tolerance for hate, harassment or politics." },
-     "discipline": { "title": "Troop Discipline",     "desc": "Stay under hospital cap unless shielded…." },
-     "engagement": { "title": "Engagement Required",  "desc": "Read posts. Join discussions. Use Discord to strengthen the Order." },
-     "defend":     { "title": "Defend One Another",   "desc": "If we’re scouted or at war — we defend. Always." },
-     "donate":     { "title": "Donate Daily",         "desc": "3 x 15 donations per day (45 total). No excuses." },
-     "events":     { "title": "Show Up to Events",    "desc": "Elite Wars, Adventures, TD, Realm events. Show up or show you’re not part of this Order." },
-     "agree":      "I Agree",
-     "decline":    "I Decline",
-     "confirmed":  "\u2705 You have agreed to the Code of Conduct!",
-     "declined":   "\u274C You must agree to the Code of Conduct to continue."
+      "respect": {
+        "title": "Respect is Mandatory",
+        "desc": "Global alliance. Diverse voices. Zero tolerance for hate, harassment or politics."
+      },
+      "discipline": {
+        "title": "Troop Discipline",
+        "desc": "Stay under hospital cap unless shielded…."
+      },
+      "engagement": {
+        "title": "Engagement Required",
+        "desc": "Read posts. Join discussions. Use Discord to strengthen the Order."
+      },
+      "defend": {
+        "title": "Defend One Another",
+        "desc": "If we’re scouted or at war — we defend. Always."
+      },
+      "donate": {
+        "title": "Donate Daily",
+        "desc": "3 x 15 donations per day (45 total). No excuses."
+      },
+      "events": {
+        "title": "Show Up to Events",
+        "desc": "Elite Wars, Adventures, TD, Realm events. Show up or show you’re not part of this Order."
+      },
+      "agree": "I Agree",
+      "decline": "I Decline",
+      "confirmed": "\u2705 You have agreed to the Code of Conduct!",
+      "declined": "\u274C You must agree to the Code of Conduct to continue."
     },
-  "eventAttendance": {
-     "elite": {
-     "title": "⚔️ Elite Adventures",
-     "desc": "Occurs every week on Sunday at 20:00."
+    "eventAttendance": {
+      "elite": {
+        "title": "⚔️ Elite Adventures",
+        "desc": "Occurs every week on Sunday at 20:00."
+      },
+      "defence": {
+        "title": "🛡️ Territory Defence",
+        "desc": "Occurs every fortnight on Saturday at 20:00."
+      }
     },
-    "defence": {
-      "title": "🛡️ Territory Defence",
-      "desc": "Occurs every fortnight on Saturday at 20:00."
-    }
-  },
-  "selectAttendance": "📋 How available are you for {event}?",
-  "attendance.often": "Often available",
-  "attendance.sometimes": "Sometimes available",
-  "attendance.rarely": "Rarely available",
-  "attendanceConfirm": "✅ Your availability for {event}: {availability}",
-  "logStart": "🔔 Onboarding started for {user}",
-  "logLocation": "🌍 Location captured: {country}{subdivision, select, undefined {} other { / {subdivision}}} @ {timezone}",
-  "logVows": "📜 VOWs & CoC agreed by {user}",
-  "logAge": "🎂 Age range chosen by {user}: {age}",
-  "logBio": "📝 Bio submitted by {user}",
-  "logExperience": "🎮 Gaming experience saved for {user}: {years} years",
-  "logFarms": "🌾 Farms count saved for {user}: {farms}",
-  "logAlerts": "🚨 Alert preferences saved for {user}",
-  "logRuins": "⛩️ Ruins time set by {user}: {time}",
-  "logEventAttendance": "📋 Event availability saved for {user}",
-  "logComplete": "✅ Onboarding complete for {user}",
-  "logError": "❌ Onboarding error for {user}: {error}"
+    "selectAttendance": "📋 How available are you for {event}?",
+    "attendance.often": "Often available",
+    "attendance.sometimes": "Sometimes available",
+    "attendance.rarely": "Rarely available",
+    "attendanceConfirm": "✅ Your availability for {event}: {availability}",
+    "logStart": "🔔 Onboarding started for {user}",
+    "logLocation": "🌍 Location captured: {country}{subdivision, select, undefined {} other { / {subdivision}}} @ {timezone}",
+    "logVows": "📜 VOWs & CoC agreed by {user}",
+    "logAge": "🎂 Age range chosen by {user}: {age}",
+    "logBio": "📝 Bio submitted by {user}",
+    "logExperience": "🎮 Gaming experience saved for {user}: {years} years",
+    "logFarms": "🌾 Farms count saved for {user}: {farms}",
+    "logAlerts": "🚨 Alert preferences saved for {user}",
+    "logRuins": "⛩️ Ruins time set by {user}: {time}",
+    "logEventAttendance": "📋 Event availability saved for {user}",
+    "logComplete": "✅ Onboarding complete for {user}",
+    "logError": "❌ Onboarding error for {user}: {error}",
+    "onboarding.bioTitle": "Tell Us About Yourself",
+    "onboarding.bioLabel": "Your short bio (200 characters max)",
+    "onboarding.bioPrompt": "Please fill in the form below to share a little about yourself.",
+    "onboarding.bioConfirm": "Thank you! We've saved your bio.",
+    "onboarding.selectFarms": "How many farms do you run?",
+    "onboarding.farmsConfirm": "✅ Got it! You run {{farms}} farms."
   },
   "time": {
     "localFormat": "\ud83d\udd52 Your local time: {time}",
@@ -151,25 +190,25 @@
     "31to50": "31-50",
     "50plus": "50+"
   },
-  "announceTitle":   "🎉 Welcome to The Vigilant Order!",
+  "announceTitle": "🎉 Welcome to The Vigilant Order!",
   "announceDescription": "Please welcome {user} who just completed onboarding!",
   "cbsp": {
-     "commandDesc": "Central Build Support Program commands",
-     "joinDesc": "Join the CBSP program",
-     "cleanDesc": "Request a cleaning run",
-     "pushDesc": "Request a resource push",
-     "overviewLabel": "Overview",
-     "rulesLabel": "How It Works",
-     "benefitsLabel": "Why Join",
-     "nextStepsLabel": "Next Steps",
-     "pushRequestTitle": "🛘 CBSP Push Request",
-     "userLabel": "Player",
-     "buildingLabel": "Building",
-     "amountLabel": "Amount",
-     "statusLabel": "Status",
-     "statusAwaiting": "Awaiting approval",
-     "statusActive": "Active",
-     "statusCompleted": "Completed",
+    "commandDesc": "Central Build Support Program commands",
+    "joinDesc": "Join the CBSP program",
+    "cleanDesc": "Request a cleaning run",
+    "pushDesc": "Request a resource push",
+    "overviewLabel": "Overview",
+    "rulesLabel": "How It Works",
+    "benefitsLabel": "Why Join",
+    "nextStepsLabel": "Next Steps",
+    "pushRequestTitle": "🛘 CBSP Push Request",
+    "userLabel": "Player",
+    "buildingLabel": "Building",
+    "amountLabel": "Amount",
+    "statusLabel": "Status",
+    "statusAwaiting": "Awaiting approval",
+    "statusActive": "Active",
+    "statusCompleted": "Completed",
     "onboardingTitle": "\ud83d\udcdc CBSP Onboarding",
     "joinConfirm": "I agree to join CBSP",
     "joinCheckDm": "Check your DMs to complete CBSP onboarding.",
@@ -241,6 +280,7 @@
     "schedulePrompt": "\uD83D\uDCD3 Select an event to schedule:",
     "schedulePosted": "\u2705 Event board posted successfully.",
     "scheduleError": "\u274C Failed to post event board.",
+    "logSchedulePost": "📅 Event board posted to channel by {{user}}",
     "createTitle": "\ud83d\udcc5 Schedule New Event",
     "modalTitle": "Event Setup",
     "fields": {
@@ -269,10 +309,10 @@
       "create": "\u274c Failed to create event. Please check your input."
     },
     "cleanup": {
-      "check":          "⏰ Checking for expired events to clean up...",
-      "deleted":        "🗑️ Deleted expired event post: {title}",
-      "failedDelete":   "⚠️ Failed to delete event post ({title}): {error}",
-      "error":          "❌ Event cleanup error: {error}"
+      "check": "⏰ Checking for expired events to clean up...",
+      "deleted": "🗑️ Deleted expired event post: {title}",
+      "failedDelete": "⚠️ Failed to delete event post ({title}): {error}",
+      "error": "❌ Event cleanup error: {error}"
     },
     "embed": {
       "notFound": "\u274c Embed message with ID {id} not found.",
@@ -358,19 +398,63 @@
     "logError": "Error creating agenda item: {error}"
   },
   "commandHandler": {
-     "noDir": "Commands directory not found at {{path}}.",
-     "loaded": "Command '{{name}}' loaded.",
-     "invalidFile": "Invalid command file: {{file}}.",
-     "failedLoad": "Failed to load {{file}}: {{error}}.",
-     "totalLoaded": "Total commands loaded: {{count}}."
+    "noDir": "Commands directory not found at {{path}}.",
+    "loaded": "Command '{{name}}' loaded.",
+    "invalidFile": "Invalid command file: {{file}}.",
+    "failedLoad": "Failed to load {{file}}: {{error}}.",
+    "totalLoaded": "Total commands loaded: {{count}}."
   },
   "serviceHandler": {
-     "noDir": "Services directory not found at {{path}}.",
-     "startService": "Service '{{file}}' started.",
-     "loadedService": "Service '{{service}}' loaded successfully.",
-     "failedLoad": "Failed to load {{file}}: {{error}}.",
-     "totalLoaded": "Total services loaded: {{count}}.",
-     "stoppedService": "Service '{{service}}' stopped.",
-     "errorStopping": "Error stopping {{file}}: {{error}}."
-  }
+    "noDir": "Services directory not found at {{path}}.",
+    "startService": "Service '{{file}}' started.",
+    "loadedService": "Service '{{service}}' loaded successfully.",
+    "failedLoad": "Failed to load {{file}}: {{error}}.",
+    "totalLoaded": "Total services loaded: {{count}}.",
+    "stoppedService": "Service '{{service}}' stopped.",
+    "errorStopping": "Error stopping {{file}}: {{error}}."
+  },
+  "profile": {
+    "notFound": "You don't have a profile yet.",
+    "title": "{{username}}'s Profile",
+    "bio": "📝 Bio",
+    "gamingExperience": "🎮 Gaming Experience",
+    "years": "years",
+    "language": "🌐 Language",
+    "location": "📍 Location",
+    "timezone": "⏰ Timezone",
+    "farms": "🚜 Farms",
+    "ageRange": "👤 Age Range",
+    "ruinsTime": "⛏️ Preferred Ruins Time",
+    "vowsAccepted": "📜 Vows Accepted",
+    "codeAccepted": "⚖️ Code Accepted",
+    "eliteAdventures": "🏹 Elite Adventures Availability",
+    "territoryDefence": "🛡️ Territory Defence Availability",
+    "footer": "This information is private to you",
+    "alertsHeader": "📣 Alerts Enabled",
+    "alertsScout": "🕵️ Scout Alerts",
+    "alertsAttack": "⚔️ Attack Alerts",
+    "alertsEvent": "📅 Event Alerts"
+  },
+  "postmessage.selectModule": "Select a module to post from",
+  "postmessage.module.onboarding": "Onboarding",
+  "postmessage.promptModule": "Please select a module to continue",
+  "postmessage.selectMessage": "Select a message to post",
+  "postmessage.promptMessage": "Choose which message you'd like to post",
+  "postmessage.onboarding.vows": "Alliance VOWs",
+  "postmessage.onboarding.coc": "Code of Conduct",
+  "postmessage.invalidSelection": "Invalid selection. Please try again.",
+  "postmessage.postedSuccess": "✅ Message posted successfully!",
+  "postmessage.selectChannel": "Select a channel to post into",
+  "postmessage.promptChannel": "Where should this message be posted?",
+  "postmessage.channel.general": "💬 General Chat",
+  "postmessage.channel.announcements": "📢 Announcements",
+  "postmessage.channel.recruitment": "📥 Recruitment",
+  "postmessage.channel.training": "🎓 Training Ground",
+  "postmessage.channelError": "⚠️ Unable to access the selected channel.",
+  "postmessage.postedToChannel": "✅ Your message has been posted to {{channel}}",
+  "postmessage.selectChannel": "Select a channel to post into",
+  "postmessage.channel.general": "💬 General Chat",
+  "postmessage.channel.announcements": "📢 Announcements",
+  "postmessage.channel.trainingHub": "🎓 Training Ground",
+  "postmessage.channel.leadership": "🧠 Leadership HQ"
 }

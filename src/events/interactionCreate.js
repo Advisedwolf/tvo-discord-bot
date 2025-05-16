@@ -1,70 +1,111 @@
-// src/events/interactionCreate.js
-// Routes slash commands and component interactions (buttons, select menus, modals) to their handlers
+// src/handlers/interactionCreate.js
+import { replyError } from "../utils/replyHelpers.js";
+import { t } from "../utils/translator.js";
 
-const { onboardingButtonHandler } = require('../services/onboardingService');
-const { shieldButtonHandler } = require('../services/shieldService');
-const logger = require('../utils/logger');
+export default {
+  name: "interactionCreate",
+  async execute(client, interaction) {
+    try {
+      if (interaction.isChatInputCommand()) {
+        console.log(`[DEBUG] Received command: ${interaction.commandName}`);
+        console.log(
+          `[DEBUG] Commands loaded: ${Array.from(client.commands.keys()).join(", ")}`,
+        );
 
-module.exports = {
-  name: 'interactionCreate',
-  async execute(interaction, client) {
-    // 1️⃣ Slash commands
-    if (interaction.isCommand()) {
-      const command = client.commands.get(interaction.commandName);
-      logger.info(`Slash command received: /${interaction.commandName} from ${interaction.user.tag}`, 'interaction');
-      if (!command) return;
-      try {
-        await command.execute(interaction, client);
-      } catch (err) {
-        logger.error(`Error executing /${interaction.commandName}: ${err.message}`, 'interaction');
-        if (!interaction.replied) {
+        const command = client.commands.get(interaction.commandName);
+        if (!command) {
+          console.log(`[WARN] Command not found: ${interaction.commandName}`);
           await interaction.reply({
-            content: '❌ An error occurred while running that command.',
-            ephemeral: true,
+            content: t("error.command_not_found"),
+            flags: 64,
           });
-        }
-      }
-      return;
-    }
-
-    // 2️⃣ Button interactions
-    if (interaction.isButton()) {
-      logger.debug(`Button clicked: ${interaction.customId} by ${interaction.user.tag}`, 'interaction');
-      switch (interaction.customId) {
-        case 'start_onboarding':
-          return onboardingButtonHandler(interaction, client);
-        case 'start_shield':
-          return shieldButtonHandler(interaction, client);
-        // Add future button handlers here
-        default:
           return;
+        }
+
+        await command.execute(interaction);
+        console.log(
+          `[INFO] Successfully executed command: ${interaction.commandName}`,
+        );
+      } else if (interaction.isButton()) {
+        console.log(
+          `[DEBUG] Button interaction received: ${interaction.customId}`,
+        );
+        if (!client.buttonHandler) {
+          console.log("[WARN] Button handler not found");
+          await interaction.reply({
+            content: t("error.handler_not_found", { type: "button" }),
+            flags: 64,
+          });
+          return;
+        }
+        await client.buttonHandler.handle(interaction);
+        console.log("[INFO] Button interaction handled");
+      } else if (interaction.isModalSubmit()) {
+        console.log(`[DEBUG] Modal submit received: ${interaction.customId}`);
+        if (!client.modalHandler) {
+          console.log("[WARN] Modal handler not found");
+          await interaction.reply({
+            content: t("error.handler_not_found", { type: "modal" }),
+            flags: 64,
+          });
+          return;
+        }
+        await client.modalHandler.handle(interaction);
+        console.log("[INFO] Modal interaction handled");
+      } else if (interaction.isStringSelectMenu()) {
+        console.log(
+          `[DEBUG] Select menu interaction received: ${interaction.customId}`,
+        );
+        if (!client.selectMenuHandler) {
+          console.log("[WARN] Select menu handler not found");
+          await interaction.reply({
+            content: t("error.handler_not_found", { type: "select menu" }),
+            flags: 64,
+          });
+          return;
+        }
+        await client.selectMenuHandler.handle(interaction);
+        console.log("[INFO] Select menu interaction handled");
+      } else if (interaction.isUserContextMenuCommand()) {
+        console.log(
+          `[DEBUG] User context menu received: ${interaction.commandName}`,
+        );
+        if (!client.userContextMenuHandler) {
+          console.log("[WARN] User context menu handler not found");
+          await interaction.reply({
+            content: t("error.handler_not_found", {
+              type: "user context menu",
+            }),
+            flags: 64,
+          });
+          return;
+        }
+        await client.userContextMenuHandler.handle(interaction);
+        console.log("[INFO] User context menu interaction handled");
+      } else if (interaction.isMessageContextMenuCommand()) {
+        console.log(
+          `[DEBUG] Message context menu received: ${interaction.commandName}`,
+        );
+        if (!client.messageContextMenuHandler) {
+          console.log("[WARN] Message context menu handler not found");
+          await interaction.reply({
+            content: t("error.handler_not_found", {
+              type: "message context menu",
+            }),
+            flags: 64,
+          });
+          return;
+        }
+        await client.messageContextMenuHandler.handle(interaction);
+        console.log("[INFO] Message context menu interaction handled");
+      } else {
+        console.log("[DEBUG] Unknown interaction type");
       }
+    } catch (error) {
+      // Always log in English for debugging
+      console.error("Error handling interaction:", error);
+      // Use standardized, localized error reply
+      await replyError(interaction);
     }
-
-    // 3️⃣ Select menus
-    if (interaction.isSelectMenu()) {
-      logger.debug(`Select menu used: ${interaction.customId} by ${interaction.user.tag}`, 'interaction');
-      return;
-    }
-
-    // 4️⃣ Modals
-    if (interaction.isModalSubmit()) {
-      logger.debug(`Modal submitted: ${interaction.customId} by ${interaction.user.tag}`, 'interaction');
-
-      if (interaction.customId.startsWith('event_edit:')) {
-        const { handleEditEventModal } = require('../services/eventEditModalHandler');
-        return handleEditEventModal(interaction, client);
-      }
-
-      if (interaction.customId === 'agenda_create_modal') {
-        const { handleAgendaCreateModal } = require('../services/agendaCreateModalHandler');
-        return handleAgendaCreateModal(interaction, client);
-      }
-
-      if (interaction.customId === 'agenda_submit_modal') {
-        const { handleAgendaSubmission } = require('../services/agendaSubmissionHandler');
-        return handleAgendaSubmission(interaction, client);
-      }
-    }
-  }
+  },
 };

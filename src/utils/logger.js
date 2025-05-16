@@ -1,11 +1,11 @@
+// src/utils/logger.js
 
-const debugMode = process.env.DEBUG === 'true';
+export default {
+  info: (message, tag = "INFO") => {
+    console.log(`[${tag}] ${message}`);
+  },
 
-module.exports = {
-  info: (msg, scope = 'general') => console.log(`[INFO][${scope}] ${msg}`),
-  warn: (msg, scope = 'general') => console.warn(`[WARN][${scope}] ${msg}`),
-  error: (msg, scope = 'general') => console.error(`[ERROR][${scope}] ${msg}`),
-  debug: (msg, scope = 'general') => {
-    if (debugMode) console.log(`[DEBUG][${scope}] ${msg}`);
-  }
+  error: (message, tag = "ERROR") => {
+    console.error(`[${tag}] ${message}`);
+  },
 };

@@ -4,13 +4,15 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "prepare": "husky install",
     "deploy-commands": "node deploy-commands.js",
-    "dev": "nodemon index.js",
-    "lint": "eslint . --ext .js",
-    "format": "prettier --write .",
-    "prepare": "husky"
+    "start": "node index.js",
+    "test": "mocha \"tests/**/*.spec.js\"",
+    "lint": "eslint \"src/**/*.{js,ts}\"",
+    "format": "prettier --write \"**/*.{js,json,md}\""
   },
+  "lint": "eslint \"src/**/*.{js,ts}\"",
+  "format": "prettier --write \"**/*.{js,json,md}\"",
   "lint-staged": {
     "src/**/*.{js,json,md}": [
       "eslint --fix",
@@ -22,7 +24,7 @@
     "config": "^3.3.12",
     "deepl": "^1.0.13",
     "discord-api-types": "^0.38.4",
-    "discord.js": "^13.17.1",
+    "discord.js": "^14.19.3",
     "dotenv": "^10.0.0",
     "i18next": "^21.10.0",
     "itranslator": "^3.0.6",
@@ -37,15 +39,12 @@
     "axios": "^1.4.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
-    "@eslint/json": "^0.12.0",
-    "@eslint/markdown": "^6.4.0",
-    "eslint": "^9.26.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.4.0",
-    "globals": "^16.1.0",
-    "husky": "^9.1.7",
+    "chai": "^4.5.0",
+    "eslint": "^9.27.0",
+    "husky": "^8.0.0",
     "lint-staged": "^16.0.0",
-    "prettier": "^3.5.3"
+    "mocha": "^10.8.2",
+    "prettier": "^3.5.3",
+    "sinon": "^15.2.0"
   }
 }

@@ -1,81 +1,54 @@
-// src/handlers/commandHandler.js
-const { Collection } = require('discord.js');
-const fs = require('fs');
-const path = require('path');
-const logger = require('../utils/logger');
-const translator = require('../utils/translator');
+import fs from "fs";
+import path from "path";
+import { pathToFileURL } from "url";
+
+const commands = new Map();
 
 /**
- * CommandHandler
- * Recursively loads slash commands and registers them on the client.
+ * Recursively find all JavaScript files under a directory.
+ * @param {string} dir - The directory to search.
+ * @returns {string[]} Array of absolute file paths.
  */
-module.exports = class CommandHandler {
-  constructor(client, options = {}) {
-    this.client = client;
-    this.commandsPath = options.commandsPath
-      || path.join(__dirname, '..', 'commands');
-    this.client.commands = new Collection();
-  }
-
-  /**
-   * Recursively gets all file paths in a directory.
-   * @param {string} dir
-   * @returns {string[]}
-   */
-  walkDirectory(dir) {
-    return fs.readdirSync(dir, { withFileTypes: true })
-      .flatMap(entry => {
-        const fullPath = path.join(dir, entry.name);
-        return entry.isDirectory()
-          ? this.walkDirectory(fullPath)
-          : [fullPath];
-      });
-  }
-
-  /**
-   * Loads and registers commands.
-   */
-  async loadCommands() {
-    if (!fs.existsSync(this.commandsPath)) {
-      logger.warn(
-        translator.t('commandHandler.noDir', { path: this.commandsPath }),
-        'commands'
-      );
-      return;
+function getCommandFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((dirent) => {
+    const fullPath = path.join(dir, dirent.name);
+    if (dirent.isDirectory()) {
+      return getCommandFiles(fullPath);
+    } else if (dirent.isFile() && dirent.name.endsWith(".js")) {
+      return [fullPath];
     }
+    return [];
+  });
+}
 
-    const files = this.walkDirectory(this.commandsPath)
-      .filter(file => file.endsWith('.js'));
+/**
+ * Loads all command modules from production and test directories,
+ * supporting nested folder structures.
+ * @param {import('discord.js').Client} client
+ */
+export async function loadCommands(client) {
+  const prodDir = path.join(process.cwd(), "src", "commands");
+  const testDir = path.join(process.cwd(), "tests", "commands");
 
-    for (const filePath of files) {
-      try {
-        const command = require(filePath);
-        if (command.data && typeof command.execute === 'function') {
-          this.client.commands.set(command.data.name, command);
-          logger.info(
-            translator.t('commandHandler.loaded', { name: command.data.name }),
-            'commands'
-          );
-        } else {
-          logger.warn(
-            translator.t('commandHandler.invalidFile', { file: path.basename(filePath) }),
-            'commands'
-          );
-        }
-      } catch (error) {
-        logger.error(
-          translator.t('commandHandler.failedLoad', {
-            file: path.basename(filePath),
-            error: error.message
-          }),
-          'commands'
-        );
+  const prodFiles = getCommandFiles(prodDir);
+  const testFiles = getCommandFiles(testDir);
+
+  for (const filePath of [...prodFiles, ...testFiles]) {
+    try {
+      const module = await import(pathToFileURL(filePath).href);
+      const command = module.default || module;
+      if (command?.data?.name && typeof command.execute === "function") {
+        commands.set(command.data.name, command);
+        console.log(`Loaded command: ${command.data.name}`);
+      } else {
+        console.warn(`Skipping ${filePath}: missing data.name or execute()`);
       }
+    } catch (error) {
+      console.error(`Failed to load command at ${filePath}:`, error);
     }
-
-    logger.info(
-      translator.t('commandHandler.totalLoaded', { count: this.client.commands.size }),
-      'commands'
-    );
   }
-};
+
+  client.commands = commands;
+  console.log(`[DEBUG] Commands loaded: ${[...commands.keys()].join(", ")}`);
+}

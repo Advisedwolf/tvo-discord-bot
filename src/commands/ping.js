@@ -21,7 +21,10 @@ export async function execute(interaction) {
     }
     locale = profile.locale || locale;
   } catch (err) {
-    console.error(`Error fetching/creating UserProfile for ${interaction.user.tag}:`, err);
+    console.error(
+      `Error fetching/creating UserProfile for ${interaction.user.tag}:`,
+      err
+    );
   }
 
   // Translate the reply
@@ -32,3 +35,4 @@ export async function execute(interaction) {
 }
 
 // PRECOMMIT TEST  - a second change.... now a third change...
+// lint-staged test

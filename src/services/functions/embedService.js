@@ -1,19 +1,13 @@
 // src/services/functions/embedService.js
-import fs from "fs";
-import path from "path";
-import { createRequire } from "module";
+import fs from 'fs';
+import path from 'path';
+import { createRequire } from 'module';
 
 // Use CommonJS-style require to dynamically load embed templates
 const require = createRequire(import.meta.url);
 
 // Path to the embeds directory under functions
-const embedsDir = path.join(
-  process.cwd(),
-  "src",
-  "services",
-  "functions",
-  "embeds",
-);
+const embedsDir = path.join(process.cwd(), 'src', 'services', 'functions', 'embeds');
 
 // Template registry
 const templates = {};
@@ -29,7 +23,7 @@ function getTemplateFiles(dir) {
     const fullPath = path.join(dir, dirent.name);
     if (dirent.isDirectory()) {
       return getTemplateFiles(fullPath);
-    } else if (dirent.isFile() && dirent.name.endsWith(".js")) {
+    } else if (dirent.isFile() && dirent.name.endsWith('.js')) {
       return [fullPath];
     }
     return [];
@@ -38,11 +32,11 @@ function getTemplateFiles(dir) {
 
 // Dynamically load all .js files in the embeds directory (recursively)
 for (const filePath of getTemplateFiles(embedsDir)) {
-  const name = path.basename(filePath, ".js");
+  const name = path.basename(filePath, '.js');
   try {
     const tmplModule = require(filePath);
     const template = tmplModule.default || tmplModule;
-    if (typeof template === "function") {
+    if (typeof template === 'function') {
       templates[name] = template;
       console.log(`Registered embed template: ${name}`);
     }

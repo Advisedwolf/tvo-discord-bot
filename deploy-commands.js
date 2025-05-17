@@ -1,21 +1,19 @@
-import "dotenv/config";
-import fs from "fs";
-import path from "path";
-import { pathToFileURL } from "url";
-import { REST, Routes } from "discord.js";
+import 'dotenv/config';
+import fs from 'fs';
+import path from 'path';
+import { pathToFileURL } from 'url';
+import { REST, Routes } from 'discord.js';
 
 const token = process.env.DISCORD_TOKEN;
 const clientId = process.env.CLIENT_ID;
 const guildId = process.env.GUILD_ID;
 
 if (!token || !clientId || !guildId) {
-  console.error(
-    "Missing DISCORD_TOKEN, CLIENT_ID, or GUILD_ID in environment variables.",
-  );
+  console.error('Missing DISCORD_TOKEN, CLIENT_ID, or GUILD_ID in environment variables.');
   process.exit(1);
 }
 
-const rest = new REST({ version: "10" }).setToken(token);
+const rest = new REST({ version: '10' }).setToken(token);
 
 /**
  * Recursively collects all .js files under a directory.
@@ -28,7 +26,7 @@ function getCommandFiles(dir) {
     const fullPath = path.join(dir, dirent.name);
     if (dirent.isDirectory()) {
       return getCommandFiles(fullPath);
-    } else if (dirent.isFile() && dirent.name.endsWith(".js")) {
+    } else if (dirent.isFile() && dirent.name.endsWith('.js')) {
       return [fullPath];
     }
     return [];
@@ -52,10 +50,8 @@ async function loadCommandsFromDir(dirPath) {
         console.warn(`Skipping command at ${filePath}: missing 'data' export.`);
         continue;
       }
-      if (typeof commandData.toJSON !== "function") {
-        console.warn(
-          `Skipping command at ${filePath}: 'data' export missing toJSON method.`,
-        );
+      if (typeof commandData.toJSON !== 'function') {
+        console.warn(`Skipping command at ${filePath}: 'data' export missing toJSON method.`);
         continue;
       }
       commands.push(commandData.toJSON());
@@ -70,14 +66,12 @@ async function loadCommandsFromDir(dirPath) {
 
 async function main() {
   try {
-    const prodCommandsDir = path.join(process.cwd(), "src", "commands");
-    const testCommandsDir = path.join(process.cwd(), "tests", "commands");
+    const prodCommandsDir = path.join(process.cwd(), 'src', 'commands');
+    const testCommandsDir = path.join(process.cwd(), 'tests', 'commands');
 
     const prodCommands = await loadCommandsFromDir(prodCommandsDir);
     const testCommands =
-      process.env.NODE_ENV === "test"
-        ? await loadCommandsFromDir(testCommandsDir)
-        : [];
+      process.env.NODE_ENV === 'test' ? await loadCommandsFromDir(testCommandsDir) : [];
 
     // Combine and dedupe by name
     const allCommands = [];
@@ -91,15 +85,13 @@ async function main() {
       allCommands.push(cmd);
     }
 
-    console.log(
-      `Registering ${allCommands.length} commands to guild ${guildId}...`,
-    );
+    console.log(`Registering ${allCommands.length} commands to guild ${guildId}...`);
     await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
       body: allCommands,
     });
-    console.log("Successfully registered application commands.");
+    console.log('Successfully registered application commands.');
   } catch (error) {
-    console.error("Error registering commands:", error);
+    console.error('Error registering commands:', error);
     process.exit(1);
   }
 }

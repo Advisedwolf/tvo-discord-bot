@@ -1,6 +1,6 @@
 // src/services/functions/embeds/info.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 /**
  * Info‐style embed with hidden tracking ID and contextual fields.
@@ -13,8 +13,8 @@ import { icons } from "../../../config/assets.js";
  */
 export default function infoTemplate(options = {}) {
   const {
-    title = "ℹ️ Information",
-    description = "",
+    title = 'ℹ️ Information',
+    description = '',
     fields = [],
     // Generate a simple unique ID if none provided:
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -32,7 +32,7 @@ export default function infoTemplate(options = {}) {
 
   // Hidden tracking-ID field (zero-width name)
   embed.addFields({
-    name: "\u200B",
+    name: '\u200B',
     value: id,
     inline: false,
   });

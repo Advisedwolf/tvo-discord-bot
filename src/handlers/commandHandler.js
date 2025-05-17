@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import { pathToFileURL } from "url";
+import fs from 'fs';
+import path from 'path';
+import { pathToFileURL } from 'url';
 
 const commands = new Map();
 
@@ -15,7 +15,7 @@ function getCommandFiles(dir) {
     const fullPath = path.join(dir, dirent.name);
     if (dirent.isDirectory()) {
       return getCommandFiles(fullPath);
-    } else if (dirent.isFile() && dirent.name.endsWith(".js")) {
+    } else if (dirent.isFile() && dirent.name.endsWith('.js')) {
       return [fullPath];
     }
     return [];
@@ -28,8 +28,8 @@ function getCommandFiles(dir) {
  * @param {import('discord.js').Client} client
  */
 export async function loadCommands(client) {
-  const prodDir = path.join(process.cwd(), "src", "commands");
-  const testDir = path.join(process.cwd(), "tests", "commands");
+  const prodDir = path.join(process.cwd(), 'src', 'commands');
+  const testDir = path.join(process.cwd(), 'tests', 'commands');
 
   const prodFiles = getCommandFiles(prodDir);
   const testFiles = getCommandFiles(testDir);
@@ -38,7 +38,7 @@ export async function loadCommands(client) {
     try {
       const module = await import(pathToFileURL(filePath).href);
       const command = module.default || module;
-      if (command?.data?.name && typeof command.execute === "function") {
+      if (command?.data?.name && typeof command.execute === 'function') {
         commands.set(command.data.name, command);
         console.log(`Loaded command: ${command.data.name}`);
       } else {
@@ -50,5 +50,5 @@ export async function loadCommands(client) {
   }
 
   client.commands = commands;
-  console.log(`[DEBUG] Commands loaded: ${[...commands.keys()].join(", ")}`);
+  console.log(`[DEBUG] Commands loaded: ${[...commands.keys()].join(', ')}`);
 }

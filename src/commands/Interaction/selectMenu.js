@@ -1,21 +1,15 @@
 // src/commands/Interaction/selectMenu.js
-import {
-  SlashCommandBuilder,
-  ActionRowBuilder,
-  StringSelectMenuBuilder,
-} from "discord.js";
-import { getService } from "../../services/servicesRegistry.js";
-import { createEmbed } from "../../services/functions/embedService.js";
+import { SlashCommandBuilder, ActionRowBuilder, StringSelectMenuBuilder } from 'discord.js';
+import { getService } from '../../services/servicesRegistry.js';
+import { createEmbed } from '../../services/functions/embedService.js';
 
 export const data = new SlashCommandBuilder()
-  .setName("selectmenu")
-  .setDescription("Shows a select menu");
+  .setName('selectmenu')
+  .setDescription('Shows a select menu');
 
 export async function execute(interaction) {
   // 1) Determine service key (slash vs component)
-  const key = interaction.isChatInputCommand()
-    ? interaction.commandName
-    : interaction.customId;
+  const key = interaction.isChatInputCommand() ? interaction.commandName : interaction.customId;
 
   // 2) Lookup the service
   const service = getService(key);
@@ -28,8 +22,8 @@ export async function execute(interaction) {
     const row = new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
         .setCustomId(key)
-        .setPlaceholder(result.placeholder || "Choose an option…")
-        .addOptions(result.options),
+        .setPlaceholder(result.placeholder || 'Choose an option…')
+        .addOptions(result.options)
     );
     return interaction.reply({
       content: result.prompt,

@@ -1,6 +1,6 @@
 // src/services/functions/embeds/factfinding.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 /**
  * Fact‐Finding embed with amber accent and contextual fields.
@@ -13,8 +13,8 @@ import { icons } from "../../../config/assets.js";
  */
 export default function factfindingTemplate(options = {}) {
   const {
-    title = "🔍 Fact Finding",
-    description = "",
+    title = '🔍 Fact Finding',
+    description = '',
     fields = [],
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
   } = options;
@@ -29,7 +29,7 @@ export default function factfindingTemplate(options = {}) {
   if (fields.length) embed.addFields(fields);
 
   // hidden ID
-  embed.addFields({ name: "\u200B", value: id, inline: false });
+  embed.addFields({ name: '\u200B', value: id, inline: false });
 
   return embed;
 }

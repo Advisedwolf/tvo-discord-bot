@@ -1,6 +1,6 @@
 // src/handlers/modalHandler.js
-import { replyError } from "../utils/replyHelpers.js";
-import { t } from "../utils/translator.js";
+import { replyError } from '../utils/replyHelpers.js';
+import { t } from '../utils/translator.js';
 
 export default {
   /** Handles modal submit interactions by customId lookup */
@@ -12,8 +12,8 @@ export default {
 
     if (!command) {
       // Localized "modal command not found"
-      return replyError(interaction, "error.handler_not_found", {
-        type: t("modal.type", {}, interaction.user.locale),
+      return replyError(interaction, 'error.handler_not_found', {
+        type: t('modal.type', {}, interaction.user.locale),
       });
     }
 

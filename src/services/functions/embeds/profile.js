@@ -1,6 +1,6 @@
 // src/services/functions/embeds/profile.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 /**
  * Profile‐style embed with thumbnail avatar/icon, hidden tracking ID,
@@ -16,8 +16,8 @@ import { icons } from "../../../config/assets.js";
  */
 export default function profileTemplate(options = {}) {
   const {
-    title = "Profile",
-    description = "",
+    title = 'Profile',
+    description = '',
     thumbnail = icons.profile,
     fields = [],
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -35,7 +35,7 @@ export default function profileTemplate(options = {}) {
 
   // Hidden tracking‐ID field (zero-width name)
   embed.addFields({
-    name: "\u200B",
+    name: '\u200B',
     value: id,
     inline: false,
   });

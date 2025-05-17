@@ -7,8 +7,8 @@
 export default async function handleMessageAction(interaction) {
   const message = interaction.targetMessage;
   return {
-    template: "info",
-    title: "Message Action Invoked",
+    template: 'info',
+    title: 'Message Action Invoked',
     description: `You ran the message action on message ID **${message.id}**.`,
   };
 }

@@ -9,15 +9,14 @@
     "start": "node index.js",
     "test": "mocha \"tests/**/*.spec.js\"",
     "lint": "eslint \"src/**/*.{js,ts}\"",
-    "format": "prettier --write \"**/*.{js,json,md}\"",
-    "typecheck": "tsc --noEmit"
+    "format": "prettier --write \"**/*.{js,ts,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "precommit": "lint-staged"
   },
-  "lint": "eslint \"src/**/*.{js,ts}\"",
-  "format": "prettier --write \"**/*.{js,json,md}\"",
   "lint-staged": {
-    "src/**/*.{js,json,md}": [
+    "src/**/*.{js,ts,json,md}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
     ]
   },
   "dependencies": {
@@ -32,24 +31,28 @@
     "mongoose": "^6.13.8",
     "node-cron": "^3.0.3"
   },
-  "description": "## Setup",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "overrides": {
-    "axios": "^1.4.0"
-  },
   "devDependencies": {
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
     "@types/sinon": "^17.0.4",
     "chai": "^4.5.0",
-    "eslint": "^9.27.0",
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.6.0",
     "husky": "^8.0.0",
     "lint-staged": "^16.0.0",
     "mocha": "^10.8.2",
     "prettier": "^3.5.3",
     "sinon": "^15.2.0",
     "typescript": "^5.8.3"
-  }
+  },
+  "overrides": {
+    "axios": "^1.4.0"
+  },
+  "description": "## Setup",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

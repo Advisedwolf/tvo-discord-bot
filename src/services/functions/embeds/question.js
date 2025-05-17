@@ -1,6 +1,6 @@
 // src/services/functions/embeds/question.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 /**
  * Question‐style embed with navy accent and contextual fields.
@@ -13,8 +13,8 @@ import { icons } from "../../../config/assets.js";
  */
 export default function questionTemplate(options = {}) {
   const {
-    title = "❓ Question",
-    description = "",
+    title = '❓ Question',
+    description = '',
     fields = [],
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
   } = options;
@@ -29,7 +29,7 @@ export default function questionTemplate(options = {}) {
   if (fields.length) embed.addFields(fields);
 
   // hidden ID
-  embed.addFields({ name: "\u200B", value: id, inline: false });
+  embed.addFields({ name: '\u200B', value: id, inline: false });
 
   return embed;
 }

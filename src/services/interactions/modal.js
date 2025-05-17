@@ -10,22 +10,22 @@ export default async function handleModal(interaction) {
     // no embed data needed when showing modal
     return {
       // this branch is handled in command; return minimal
-      template: "info",
-      title: "Modal Opened",
-      description: "Please fill out the modal.",
+      template: 'info',
+      title: 'Modal Opened',
+      description: 'Please fill out the modal.',
     };
   }
   if (interaction.isModalSubmit()) {
-    const feedback = interaction.fields.getTextInputValue("feedback");
+    const feedback = interaction.fields.getTextInputValue('feedback');
     return {
-      template: "info",
-      title: "Feedback Received",
+      template: 'info',
+      title: 'Feedback Received',
       description: `Thanks for your feedback: "${feedback}"`,
     };
   }
   return {
-    template: "error",
-    title: "Invalid Interaction",
-    description: "This interaction is not supported.",
+    template: 'error',
+    title: 'Invalid Interaction',
+    description: 'This interaction is not supported.',
   };
 }

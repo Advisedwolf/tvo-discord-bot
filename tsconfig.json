@@ -6,19 +6,15 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,    // don’t type‐check dependencies
-    "allowJs": true,         // permit .js inputs
-    "checkJs": false,        // but don’t check them
-    "noEmit": true           // we’re not outputting TS today
+    "skipLibCheck": true, // don’t type‐check dependencies
+    "allowJs": true, // permit .js inputs
+    "checkJs": false, // but don’t check them
+    "noEmit": true // we’re not outputting TS today
   },
   "include": [
     // *only* TypeScript files go here; leave your .js out
     "src/**/*.ts",
     "tests/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "src/**/*.js",
-    "tests/**/*.js"
-  ]
+  "exclude": ["node_modules", "src/**/*.js", "tests/**/*.js"]
 }

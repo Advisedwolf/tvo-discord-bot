@@ -1,6 +1,6 @@
 // src/services/functions/embeds/video.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 /**
  * Video‐style embed for tutorials or clips.
@@ -17,7 +17,7 @@ export default function videoTemplate(options = {}) {
   const {
     title,
     url,
-    description = "",
+    description = '',
     image = null,
     fields = [],
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -36,7 +36,7 @@ export default function videoTemplate(options = {}) {
   if (fields.length) embed.addFields(fields);
 
   // Hidden ID
-  embed.addFields({ name: "\u200B", value: id, inline: false });
+  embed.addFields({ name: '\u200B', value: id, inline: false });
 
   return embed;
 }

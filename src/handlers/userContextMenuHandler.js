@@ -1,6 +1,6 @@
 // src/handlers/userContextMenuHandler.js
-import { replyError } from "../utils/replyHelpers.js";
-import { t } from "../utils/translator.js";
+import { replyError } from '../utils/replyHelpers.js';
+import { t } from '../utils/translator.js';
 
 export default {
   /** Handles User Context Menu interactions by commandName lookup */
@@ -12,8 +12,8 @@ export default {
 
     if (!command) {
       // Localized "handler not found" for user context menu
-      return replyError(interaction, "error.handler_not_found", {
-        type: t("userContextMenu.type", {}, interaction.user.locale),
+      return replyError(interaction, 'error.handler_not_found', {
+        type: t('userContextMenu.type', {}, interaction.user.locale),
       });
     }
 

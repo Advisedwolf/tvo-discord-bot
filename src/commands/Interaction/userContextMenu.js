@@ -1,10 +1,10 @@
 // src/commands/Interaction/userContextMenu.js
-import { ContextMenuCommandBuilder, ApplicationCommandType } from "discord.js";
-import { getService } from "../../services/servicesRegistry.js";
-import { createEmbed } from "../../services/functions/embedService.js";
+import { ContextMenuCommandBuilder, ApplicationCommandType } from 'discord.js';
+import { getService } from '../../services/servicesRegistry.js';
+import { createEmbed } from '../../services/functions/embedService.js';
 
 export const data = new ContextMenuCommandBuilder()
-  .setName("userAction") // matches your service key
+  .setName('userAction') // matches your service key
   .setType(ApplicationCommandType.User);
 
 export async function execute(interaction) {

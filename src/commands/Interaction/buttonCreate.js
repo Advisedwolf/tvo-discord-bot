@@ -1,16 +1,11 @@
 // src/commands/Interaction/buttonCreate.js
-import {
-  SlashCommandBuilder,
-  ActionRowBuilder,
-  ButtonBuilder,
-  ButtonStyle,
-} from "discord.js";
-import { getService } from "../../services/servicesRegistry.js";
-import { createEmbed } from "../../services/functions/embedService.js";
+import { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
+import { getService } from '../../services/servicesRegistry.js';
+import { createEmbed } from '../../services/functions/embedService.js';
 
 export const data = new SlashCommandBuilder()
-  .setName("button")
-  .setDescription("Creates a dynamic button");
+  .setName('button')
+  .setDescription('Creates a dynamic button');
 
 export async function execute(interaction) {
   // Decide if this is the initial slash or a button click:
@@ -29,7 +24,7 @@ export async function execute(interaction) {
     // On slash: send embed + button
     const button = new ButtonBuilder()
       .setCustomId(key)
-      .setLabel(result.buttonLabel ?? "Click Me!")
+      .setLabel(result.buttonLabel ?? 'Click Me!')
       .setStyle(ButtonStyle.Primary);
 
     const actionRow = new ActionRowBuilder().addComponents(button);

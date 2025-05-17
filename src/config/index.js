@@ -1,6 +1,6 @@
 // src/config/index.js
 // Load environment variables and export configuration values
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -25,7 +25,7 @@ export const IMGUR_CLIENT_ID = process.env.IMGUR_CLIENT_ID;
 /**
  * Environment flag (e.g. 'test' or 'live')
  */
-export const ENVIRONMENT = process.env.NODE_ENV || "live";
+export const ENVIRONMENT = process.env.NODE_ENV || 'live';
 
 /**
  * Guild ID for registering commands in 'test' mode (if needed)

@@ -1,14 +1,14 @@
 //      src/commands/Interaction/ping.js
-import { SlashCommandBuilder } from "discord.js";
-import { UserProfile } from "../models/UserProfile.js";
-import { t } from "../utils/translator.js";
+import { SlashCommandBuilder } from 'discord.js';
+import { UserProfile } from '../models/UserProfile.js';
+import { t } from '../utils/translator.js';
 
 export const data = new SlashCommandBuilder()
-  .setName("ping")
-  .setDescription("Replies with Pong and logs user profile status");
+  .setName('ping')
+  .setDescription('Replies with Pong and logs user profile status');
 
 export async function execute(interaction) {
-  let locale = "en";
+  let locale = 'en';
 
   try {
     // Fetch or create the user’s profile to get their locale
@@ -21,15 +21,14 @@ export async function execute(interaction) {
     }
     locale = profile.locale || locale;
   } catch (err) {
-    console.error(
-      `Error fetching/creating UserProfile for ${interaction.user.tag}:`,
-      err,
-    );
+    console.error(`Error fetching/creating UserProfile for ${interaction.user.tag}:`, err);
   }
 
   // Translate the reply
-  const message = t("ping.success", {}, locale);
+  const message = t('ping.success', {}, locale);
 
   // Reply to the interaction
   await interaction.reply({ content: message, flags: 64 });
 }
+
+// PRECOMMIT TEST  - a second change.... now a third change...

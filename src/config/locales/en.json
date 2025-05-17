@@ -1,10 +1,8 @@
 {
- "ping.success": "Pong!",
+  "ping.success": "Pong!",
   "profile.greeting": "Hello, {user}!",
-
-  "ERROR HANDLING : How to handle errors" {
+  "ERROR HANDLING": {
     "error.title": "✘ Something went wrong",
-    "profile.greeting": "Hello, {user}!",
     "errors.invalidFormat": "⚠ Invalid format. Please try again.",
     "errors.noResponse": "⌛ No response received. Please run `/onboarding` again when you are ready.",
     "errors.generic": "❌ Something went wrong. Please try again."

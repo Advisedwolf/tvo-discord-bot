@@ -5,29 +5,27 @@ import {
   TextInputBuilder,
   TextInputStyle,
   ActionRowBuilder,
-} from "discord.js";
-import { getService } from "../../services/servicesRegistry.js";
-import { createEmbed } from "../../services/functions/embedService.js";
+} from 'discord.js';
+import { getService } from '../../services/servicesRegistry.js';
+import { createEmbed } from '../../services/functions/embedService.js';
 
 export const data = new SlashCommandBuilder()
-  .setName("modal")
-  .setDescription("Opens a modal dialog");
+  .setName('modal')
+  .setDescription('Opens a modal dialog');
 
 export async function execute(interaction) {
   // Determine the service key: slash uses commandName, modal-submit uses customId
-  const key = interaction.isChatInputCommand()
-    ? interaction.commandName
-    : interaction.customId;
+  const key = interaction.isChatInputCommand() ? interaction.commandName : interaction.customId;
 
   // If it's the slash invocation, show the modal
   if (interaction.isChatInputCommand()) {
     const modal = new ModalBuilder()
       .setCustomId(key) // e.g. 'modal'
-      .setTitle("Tell me something");
+      .setTitle('Tell me something');
 
     const input = new TextInputBuilder()
-      .setCustomId("feedback") // your form field ID
-      .setLabel("What do you think of TVO?")
+      .setCustomId('feedback') // your form field ID
+      .setLabel('What do you think of TVO?')
       .setStyle(TextInputStyle.Paragraph)
       .setRequired(true);
 

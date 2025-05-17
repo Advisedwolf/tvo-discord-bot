@@ -1,5 +1,5 @@
 // src/models/UserProfile.js
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 /**
  * UserProfile schema:
@@ -10,9 +10,9 @@ import { Schema, model } from "mongoose";
  */
 const userProfileSchema = new Schema({
   discordId: { type: String, required: true, unique: true },
-  locale: { type: String, default: "en" },
+  locale: { type: String, default: 'en' },
   joinedAt: { type: Date, default: Date.now },
   data: { type: Schema.Types.Mixed, default: {} },
 });
 
-export const UserProfile = model("UserProfile", userProfileSchema);
+export const UserProfile = model('UserProfile', userProfileSchema);

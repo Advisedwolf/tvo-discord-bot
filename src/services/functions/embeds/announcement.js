@@ -1,11 +1,11 @@
 // src/services/functions/embeds/announcement.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 export default function announcementTemplate(options = {}) {
   const {
-    title = "📢 Announcement",
-    description = "",
+    title = '📢 Announcement',
+    description = '',
     fields = [],
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
   } = options;
@@ -19,6 +19,6 @@ export default function announcementTemplate(options = {}) {
 
   if (fields.length) embed.addFields(fields);
 
-  embed.addFields({ name: "\u200B", value: id, inline: false });
+  embed.addFields({ name: '\u200B', value: id, inline: false });
   return embed;
 }

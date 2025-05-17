@@ -7,8 +7,8 @@
 export default async function handleUserAction(interaction) {
   const user = interaction.targetUser;
   return {
-    template: "info",
-    title: "User Action Invoked",
+    template: 'info',
+    title: 'User Action Invoked',
     description: `You selected user **${user.tag}** via context menu.`,
   };
 }

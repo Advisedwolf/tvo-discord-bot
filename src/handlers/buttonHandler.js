@@ -1,6 +1,6 @@
 // src/handlers/buttonHandler.js
-import { replyError } from "../utils/replyHelpers.js";
-import { t } from "../utils/translator.js";
+import { replyError } from '../utils/replyHelpers.js';
+import { t } from '../utils/translator.js';
 
 export default {
   /** Handles button interactions by customId lookup */
@@ -12,8 +12,8 @@ export default {
 
     if (!command) {
       // Localized "button command not found"
-      return replyError(interaction, "error.handler_not_found", {
-        type: t("button.type", {}, interaction.user.locale),
+      return replyError(interaction, 'error.handler_not_found', {
+        type: t('button.type', {}, interaction.user.locale),
       });
     }
 

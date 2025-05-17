@@ -1,6 +1,6 @@
 // src/services/functions/embeds/minimal.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 /**
  * Minimalist embed with hidden tracking ID and optional fields.
@@ -15,8 +15,8 @@ import { icons } from "../../../config/assets.js";
  */
 export default function minimalTemplate(options = {}) {
   const {
-    title = "",
-    description = "",
+    title = '',
+    description = '',
     fields = [],
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
   } = options;
@@ -34,7 +34,7 @@ export default function minimalTemplate(options = {}) {
 
   // Hidden tracking‐ID field
   embed.addFields({
-    name: "\u200B",
+    name: '\u200B',
     value: id,
     inline: false,
   });

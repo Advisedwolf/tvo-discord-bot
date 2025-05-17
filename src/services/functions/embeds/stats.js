@@ -1,6 +1,6 @@
 // src/services/functions/embeds/stats.js
-import { EmbedBuilder } from "discord.js";
-import { icons } from "../../../config/assets.js";
+import { EmbedBuilder } from 'discord.js';
+import { icons } from '../../../config/assets.js';
 
 /**
  * Stats‐style embed with green accent, fields for numeric data,
@@ -15,8 +15,8 @@ import { icons } from "../../../config/assets.js";
  */
 export default function statsTemplate(options = {}) {
   const {
-    title = "📊 Statistics",
-    description = "",
+    title = '📊 Statistics',
+    description = '',
     fields = [],
     id = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
   } = options;
@@ -33,7 +33,7 @@ export default function statsTemplate(options = {}) {
 
   // Hidden tracking‐ID field (zero-width name)
   embed.addFields({
-    name: "\u200B",
+    name: '\u200B',
     value: id,
     inline: false,
   });

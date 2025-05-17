@@ -1,10 +1,10 @@
 // src/commands/Interaction/messageContextMenu.js
-import { ContextMenuCommandBuilder, ApplicationCommandType } from "discord.js";
-import { getService } from "../../services/servicesRegistry.js";
-import { createEmbed } from "../../services/functions/embedService.js";
+import { ContextMenuCommandBuilder, ApplicationCommandType } from 'discord.js';
+import { getService } from '../../services/servicesRegistry.js';
+import { createEmbed } from '../../services/functions/embedService.js';
 
 export const data = new ContextMenuCommandBuilder()
-  .setName("messageAction") // must exactly match your service key
+  .setName('messageAction') // must exactly match your service key
   .setType(ApplicationCommandType.Message);
 
 export async function execute(interaction) {

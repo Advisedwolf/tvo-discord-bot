@@ -9,17 +9,21 @@
     "test": "mocha \"tests/**/*.spec.js\"",
     "lint": "eslint \"src/**/*.{js,ts}\"",
     "format": "prettier --write \"src/**/*.{js,ts,json,md}\"",
-    "typecheck": "tsc --noEmit",
-    "precommit": "lint-staged"
+    "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
     "src/**/*.{js,ts,json,md}": [
       "eslint --fix",
       "prettier --write"
+    ],
+    "src/**/*.{json,md}": [
+      "prettier --write"
     ]
   },
-  "engines": {
-  "node": ">=18.0.0"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
   },
   "dependencies": {
     "discord.js": "^14.0.0",

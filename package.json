@@ -13,10 +13,18 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,ts}": [
+    "src/**/*.{js,ts,json,md}": [
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "engines": {
+  "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.0.0",
+    "mongoose": "^7.0.0",
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
@@ -29,10 +37,5 @@
     "mocha": "^10.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "discord.js": "^14.0.0",
-    "mongoose": "^7.0.0",
-    "node-fetch": "^3.0.0"
   }
 }

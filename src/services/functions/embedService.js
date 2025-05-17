@@ -1,60 +1,49 @@
 // src/services/functions/embedService.js
 import fs from 'fs';
 import path from 'path';
-import { createRequire } from 'module';
+import { pathToFileURL } from 'url';
 
-// Use CommonJS-style require to dynamically load embed templates
-const require = createRequire(import.meta.url);
-
-// Path to the embeds directory under functions
 const embedsDir = path.join(process.cwd(), 'src', 'services', 'functions', 'embeds');
-
-// Template registry
 const templates = {};
 
 /**
- * Recursively find all .js files under a directory.
- * @param {string} dir
- * @returns {string[]} Array of absolute file paths.
+ * Recursively collect all .js files under a directory.
  */
 function getTemplateFiles(dir) {
   if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((dirent) => {
-    const fullPath = path.join(dir, dirent.name);
-    if (dirent.isDirectory()) {
-      return getTemplateFiles(fullPath);
-    } else if (dirent.isFile() && dirent.name.endsWith('.js')) {
-      return [fullPath];
-    }
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((d) => {
+    const full = path.join(dir, d.name);
+    if (d.isDirectory())  return getTemplateFiles(full);
+    if (d.isFile() && d.name.endsWith('.js')) return [full];
     return [];
   });
 }
 
-// Dynamically load all .js files in the embeds directory (recursively)
-for (const filePath of getTemplateFiles(embedsDir)) {
-  const name = path.basename(filePath, '.js');
-  try {
-    const tmplModule = require(filePath);
-    const template = tmplModule.default || tmplModule;
-    if (typeof template === 'function') {
-      templates[name] = template;
-      console.log(`Registered embed template: ${name}`);
+// Immediately load all templates with dynamic import
+await Promise.all(
+  getTemplateFiles(embedsDir).map(async (filePath) => {
+    const name = path.basename(filePath, '.js');
+    try {
+      const mod = await import(pathToFileURL(filePath).href);
+      const tmpl = mod.default ?? mod;
+      if (typeof tmpl === 'function') {
+        templates[name] = tmpl;
+        console.log(`Registered embed template: ${name}`);
+      }
+    } catch (err) {
+      console.error(`Failed loading embed ${name} from ${filePath}`, err);
     }
-  } catch (err) {
-    console.error(`Failed to load embed template at ${filePath}:`, err);
-  }
-}
+  })
+);
 
 /**
  * Create an embed by template type.
- * @param {string} type - Key matching a template filename.
- * @param {object} options - Data to pass into the template function.
- * @returns {import('discord.js').EmbedBuilder}
+ * @param {string} type
+ * @param {object} opts
  */
-export function createEmbed(type, options) {
-  const template = templates[type];
-  if (!template) {
-    throw new Error(`Embed template "${type}" not found.`);
-  }
-  return template(options);
+export function createEmbed(type, opts) {
+  const tpl = templates[type];
+  if (!tpl) throw new Error(`Embed template "${type}" not found.`);
+  return tpl(opts);
 }
+

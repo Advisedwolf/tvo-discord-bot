@@ -1,10 +1,78 @@
 {
-  "ping.success": "Pong!",
-  "profile.greeting": "Hello, {user}!",
-  "ERROR HANDLING": {
-    "error.title": "✘ Something went wrong",
-    "errors.invalidFormat": "⚠ Invalid format. Please try again.",
-    "errors.noResponse": "⌛ No response received. Please run `/onboarding` again when you are ready.",
-    "errors.generic": "❌ Something went wrong. Please try again."
+  "ping": {
+    "success": "Pong!"
+  },
+  "profile": {
+    "greeting": "Hello, {user}!"
+  },
+  "ERRORS": {
+    "title": "✘ Something went wrong",
+    "invalidFormat": "⚠ Invalid format. Please try again.",
+    "noResponse": "⌛ No response received. Please run `/onboarding` again when you are ready.",
+    "generic": "❌ Something went wrong. Please try again.",
+    "handler_not_found": "❌ Unable to process that interaction."
+  },
+  "COMMANDS": {
+    "debugAssets": {
+      "description":   "Show a summary of synced channels & roles",
+      "title":         "🔍 Asset Cache Debug",
+      "channelsField": "Channels ({count})",
+      "rolesField":    "Roles ({count})",
+      "none":          "_none_",
+      "error":         "Failed to debug assets. Please try again."
+    },
+    "remind": {
+      "description": "Schedule a one-off reminder",
+      "categoryDesc": "Select a reminder category",
+      "messageDesc": "What should I remind you about?",
+      "pickDateTime": "📅 Pick a date and ⏰ time for your reminder",
+      "pickYear": "📅 Select a year",
+      "pickMonth": "📅 Select a month",
+      "pickDay": "📅 Select a day",
+      "pickHour": "⏰ Select an hour",
+      "pickMinute": "⏰ Select a minute",
+      "successTitle": "Reminder Scheduled!",
+      "successDescription": "✅ Your reminder (ID: {{id}}) is set for {{time}}.",
+      "error": {
+        "invalidDateTime": "I couldn't parse that date & time. Please try again.",
+        "failed": "Failed to schedule reminder. Please try again."
+      }
+    },
+    "reminders": {
+      "description": "List your upcoming reminders",
+      "noneTitle": "No Reminders Found",
+      "noneDesc": "You currently have no scheduled reminders.",
+      "listTitle": "Your Scheduled Reminders",
+      "error": "Failed to retrieve reminders. Please try again."
+    },
+    "cancelReminder": {
+      "description": "Cancel one of your scheduled reminders",
+      "indexDesc": "The number of the reminder (from /reminders list)",
+      "invalidIndex": "That reminder number doesn't exist.",
+      "successTitle": "Reminder Canceled",
+      "successDescription": "Canceled reminder with ID {{id}}.",
+      "error": "Failed to cancel the reminder. Please try again."
+    },
+    "syncAssets": {
+      "description": "Synchronize Discord category, channel, thread, and role IDs into the asset store",
+      "success": "✅ Synced {count} assets for this guild.",
+      "error":   "Failed to sync assets. Please check my permissions."
+    }
+  },
+  "PERMS": {
+    "listTitle": "Command Permissions",
+    "everyone": "@everyone",
+    "noneConfigured": "No permissions configured.",
+    "addSuccessTitle": "Permission Added",
+    "addSuccessDesc": "Role {{role}} can now use /{{command}}.",
+    "removeSuccessTitle": "Permission Removed",
+    "removeSuccessDesc": "Role {{role}} can no longer use /{{command}}."
+  },
+  "UI": {
+    "selectYear": "Year…",
+    "selectMonth": "Month…",
+    "selectDay": "Day…",
+    "selectHour": "Hour…",
+    "selectMinute": "Minute…"
   }
 }

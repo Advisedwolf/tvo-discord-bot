@@ -1,28 +1,65 @@
 // src/utils/replyHelpers.js
-import { getService } from '../services/servicesRegistry.js';
 import { createEmbed } from '../services/functions/embedService.js';
 import { t } from './translator.js';
 
 /**
- * Send a standardized error embed to the user.
- *
- * @param {Interaction} interaction
- * @param {string}      errorKey     — translation key, e.g. 'error.generic'
- * @param {object}      [params]     — for translator interpolation
+ * Determine locale priority: user override → Discord locale → default 'en'
  */
-export async function replyError(interaction, errorKey = 'error.generic', params = {}) {
-  // 1) Localize the title & description
-  const locale = interaction.user.locale || 'en';
-  const title = t('error.title', {}, locale); // e.g. "Error"
-  const description = t(errorKey, params, locale); // e.g. "An unexpected error occurred"
-
-  // 2) Build your error embed via your template service
-  const embed = createEmbed('error', { title, description });
-
-  // 3) Reply ephemeral so only the user sees
-  if (interaction.replied || interaction.deferred) {
-    await interaction.followUp({ embeds: [embed], flags: 64 });
-  } else {
-    await interaction.reply({ embeds: [embed], flags: 64 });
-  }
+function resolveLocale(interaction) {
+  return (
+    interaction.userProfile?.locale ||
+    interaction.locale ||
+    'en'
+  );
 }
+
+/**
+ * Standard error reply, always ephemeral via flags (64), with localization override.
+ */
+export async function replyError(
+  interaction,
+  errorKey = 'ERRORS.generic',
+  params = {}
+) {
+  const locale = resolveLocale(interaction);
+  const title = t('ERRORS.title', {}, locale);
+  const description = t(errorKey, params, locale);
+
+  const embed = createEmbed('error', { title, description });
+  const payload = { embeds: [embed], flags: 64 };
+
+  if (interaction.replied || interaction.deferred) {
+    return interaction.followUp(payload);
+  }
+  return interaction.reply(payload);
+}
+
+/**
+ * Standard success/info reply, always ephemeral via flags (64).
+ * Can accept a translation key or pre-localized content.
+ */
+export async function replySuccess(
+  interaction,
+  keyOrContent,
+  params = {}
+) {
+  const locale = resolveLocale(interaction);
+  let title;
+  let description = '';
+
+  if (typeof keyOrContent === 'string') {
+    title = t(keyOrContent, params, locale);
+  } else {
+    title = keyOrContent.title;
+    description = keyOrContent.description;
+  }
+
+  const embed = createEmbed('info', { title, description });
+  const payload = { embeds: [embed], flags: 64 };
+
+  if (interaction.replied || interaction.deferred) {
+    return interaction.followUp(payload);
+  }
+  return interaction.reply(payload);
+}
+

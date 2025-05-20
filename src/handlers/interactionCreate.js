@@ -1,13 +1,25 @@
 // src/handlers/interactionCreate.js
+import logger from '../utils/logger.js';
 import { replyError } from '../utils/replyHelpers.js';
-import { t } from '../utils/translator.js';
 
 export default {
   name: 'interactionCreate',
   async execute(client, interaction) {
-    const env = process.env.NODE_ENV || 'live';
-    const locale = interaction.user?.locale || 'en';
+    // 1) Load user profile for locale override
+    try {
+      const UserProfile = (await import('../models/UserProfile.js')).default;
+      const profile = await UserProfile.findOneAndUpdate(
+        { userId: interaction.user.id },
+        { userId: interaction.user.id },
+        { upsert: true, new: true }
+      );
+      interaction.userProfile = profile;
+    } catch (err) {
+      logger.error('[interactionCreate] Failed to load user profile', err);
+    }
 
+    // 2) Determine handler set based on environment
+    const env = process.env.NODE_ENV || 'live';
     const handlers = {
       slashHandler: client.slashHandler,
       buttonHandler: env === 'test' ? client.testButtonHandler : client.buttonHandler,
@@ -19,66 +31,56 @@ export default {
 
     try {
       if (interaction.isChatInputCommand()) {
-        console.log(`[DEBUG] Slash command received: ${interaction.commandName}`);
         if (!handlers.slashHandler) {
-          return replyError(interaction, 'error.handler_not_found', {
-            type: t('slash.type', {}, locale),
-          });
+          logger.warn('[interactionCreate] No slashHandler registered');
+          return replyError(interaction, 'ERRORS.handler_not_found');
         }
         await handlers.slashHandler.handle(interaction);
+
       } else if (interaction.isButton()) {
-        console.log(`[DEBUG] Button interaction received: ${interaction.customId}`);
         if (!handlers.buttonHandler) {
-          return replyError(interaction, 'error.handler_not_found', {
-            type: t('button.type', {}, locale),
-          });
+          logger.warn('[interactionCreate] No buttonHandler registered');
+          return replyError(interaction, 'ERRORS.handler_not_found');
         }
         await handlers.buttonHandler.handle(interaction);
+
       } else if (interaction.isModalSubmit()) {
-        console.log(`[DEBUG] Modal submit received: ${interaction.customId}`);
         if (!handlers.modalHandler) {
-          return replyError(interaction, 'error.handler_not_found', {
-            type: t('modal.type', {}, locale),
-          });
+          logger.warn('[interactionCreate] No modalHandler registered');
+          return replyError(interaction, 'ERRORS.handler_not_found');
         }
         await handlers.modalHandler.handle(interaction);
-      } else if (
-        interaction.isStringSelectMenu() ||
-        interaction.isUserSelectMenu() ||
-        interaction.isRoleSelectMenu() ||
-        interaction.isMentionableSelectMenu()
-      ) {
-        console.log(`[DEBUG] Select menu interaction received: ${interaction.customId}`);
+
+      } else if (interaction.isSelectMenu()) {
         if (!handlers.selectMenuHandler) {
-          return replyError(interaction, 'error.handler_not_found', {
-            type: t('selectMenu.type', {}, locale),
-          });
+          logger.warn('[interactionCreate] No selectMenuHandler registered');
+          return replyError(interaction, 'ERRORS.handler_not_found');
         }
         await handlers.selectMenuHandler.handle(interaction);
+
       } else if (interaction.isUserContextMenuCommand()) {
-        console.log(`[DEBUG] User context menu command received: ${interaction.commandName}`);
         if (!handlers.userContextMenuHandler) {
-          return replyError(interaction, 'error.handler_not_found', {
-            type: t('userContextMenu.type', {}, locale),
-          });
+          logger.warn('[interactionCreate] No userContextMenuHandler registered');
+          return replyError(interaction, 'ERRORS.handler_not_found');
         }
         await handlers.userContextMenuHandler.handle(interaction);
+
       } else if (interaction.isMessageContextMenuCommand()) {
-        console.log(`[DEBUG] Message context menu command received: ${interaction.commandName}`);
         if (!handlers.messageContextMenuHandler) {
-          return replyError(interaction, 'error.handler_not_found', {
-            type: t('messageContextMenu.type', {}, locale),
-          });
+          logger.warn('[interactionCreate] No messageContextMenuHandler registered');
+          return replyError(interaction, 'ERRORS.handler_not_found');
         }
         await handlers.messageContextMenuHandler.handle(interaction);
+
       } else {
-        console.log('[DEBUG] Unknown interaction type');
+        logger.info('[interactionCreate] Unknown interaction type');
       }
     } catch (error) {
-      // Log in English for diagnostics
-      console.error('Error handling interaction:', error);
+      // Log error for diagnostics
+      logger.error('[interactionCreate] Error handling interaction', error);
       // Localized, standardized error embed
       await replyError(interaction);
     }
   },
 };
+

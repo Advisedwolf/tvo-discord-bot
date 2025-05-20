@@ -1,38 +1,20 @@
-//      src/commands/Interaction/ping.js
 import { SlashCommandBuilder } from 'discord.js';
-import { UserProfile } from '../models/UserProfile.js';
 import { t } from '../utils/translator.js';
 
-export const data = new SlashCommandBuilder()
-  .setName('ping')
-  .setDescription('Replies with Pong and logs user profile status');
+export default {
+  data: new SlashCommandBuilder()
+    .setName('ping')
+    .setDescription('Replies with Pong!'),
+  async execute(interaction) {
+    // Determine locale
+    const locale =
+      interaction.userProfile?.locale ||
+      interaction.locale ||
+      'en';
+    // Translate directly
+    const message = t('ping.success', {}, locale);
 
-export async function execute(interaction) {
-  let locale = 'en';
-
-  try {
-    // Fetch or create the user’s profile to get their locale
-    let profile = await UserProfile.findOne({ discordId: interaction.user.id });
-    if (!profile) {
-      profile = await UserProfile.create({ discordId: interaction.user.id });
-      console.log(`Created new profile for ${interaction.user.tag}`);
-    } else {
-      console.log(`Loaded profile for ${interaction.user.tag}`);
-    }
-    locale = profile.locale || locale;
-  } catch (err) {
-    console.error(
-      `Error fetching/creating UserProfile for ${interaction.user.tag}:`,
-      err
-    );
+    // Plain-text ephemeral reply
+    return interaction.reply({ content: message, flags: 64 });
   }
-
-  // Translate the reply
-  const message = t('ping.success', {}, locale);
-
-  // Reply to the interaction
-  await interaction.reply({ content: message, flags: 64 });
-}
-
-// PRECOMMIT TEST  - a second change.... now a third change...
-// lint-staged test - this is now a new test once again....
+};

@@ -1,104 +1,110 @@
-// index.js
-import 'dotenv/config'; // loads .env
-import { connectDB } from './src/models/db.js'; // MongoDB connector
-import { Client, GatewayIntentBits, Partials } from 'discord.js';
-import slashHandler from './src/handlers/slashHandler.js';
-import buttonHandler from './src/handlers/buttonHandler.js';
-import selectMenuHandler from './src/handlers/selectMenuHandler.js';
-import modalHandler from './src/handlers/modalHandler.js';
-import userContextMenuHandler from './src/handlers/userContextMenuHandler.js';
-import messageContextMenuHandler from './src/handlers/messageContextMenuHandler.js';
-import testSlashHandler from './tests/handlers/testSlashHandler.js';
-import testButtonHandler from './tests/handlers/testButtonHandler.js';
-import testSelectMenuHandler from './tests/handlers/testSelectMenuHandler.js';
-import testModalHandler from './tests/handlers/testModalHandler.js';
-import testUserContextMenuHandler from './tests/handlers/testUserContextMenuHandler.js';
-import testMessageContextMenuHandler from './tests/handlers/testMessageContextMenuHandler.js';
+// index.js (project root)
+import 'dotenv/config';
+import { createRequire } from 'module';
+import path from 'path';
+import { connectDB } from './src/models/db.js';
+import { Client, GatewayIntentBits, Events } from 'discord.js';
 import { loadCommands } from './src/handlers/commandHandler.js';
-import logger from './src/utils/logger.js';
+import { loadEventHandlers } from './src/handlers/eventsRegistry.js';
+import { initScheduling } from './src/handlers/schedulingHandler.js';
 import { replyError } from './src/utils/replyHelpers.js';
+import { loadServices, getService } from './src/services/servicesRegistry.js';
+import logger from './src/utils/logger.js';
+import { t } from './src/utils/translator.js';
 
-const env = process.env.NODE_ENV || 'live';
-console.log(`Environment: ${env}`);
-
-async function main() {
-  // 1) Connect to your MongoDB before anything else
-  await connectDB();
-
-  // 2) Instantiate Discord client
-  const client = new Client({
-    intents: [
-      GatewayIntentBits.Guilds,
-      GatewayIntentBits.GuildMessages,
-      GatewayIntentBits.GuildMessageReactions,
-      GatewayIntentBits.MessageContent,
-    ],
-    partials: [Partials.Message, Partials.Channel, Partials.Reaction],
-  });
-
-  // 3) Wire up handlers based on environment
-  if (env === 'test') {
-    client.slashHandler = testSlashHandler;
-    client.buttonHandler = testButtonHandler;
-    client.selectMenuHandler = testSelectMenuHandler;
-    client.modalHandler = testModalHandler;
-    client.userContextMenuHandler = testUserContextMenuHandler;
-    client.messageContextMenuHandler = testMessageContextMenuHandler;
-  } else {
-    client.slashHandler = slashHandler;
-    client.buttonHandler = buttonHandler;
-    client.selectMenuHandler = selectMenuHandler;
-    client.modalHandler = modalHandler;
-    client.userContextMenuHandler = userContextMenuHandler;
-    client.messageContextMenuHandler = messageContextMenuHandler;
-  }
-
-  console.log('Slash Handler loaded:', !!client.slashHandler);
-  console.log('Button Handler loaded:', !!client.buttonHandler);
-  console.log('Select Menu Handler loaded:', !!client.selectMenuHandler);
-  console.log('Modal Handler loaded:', !!client.modalHandler);
-  console.log('User Context Menu Handler loaded:', !!client.userContextMenuHandler);
-  console.log('Message Context Menu Handler loaded:', !!client.messageContextMenuHandler);
-
-  // 4) Delegate interactions
-  client.on('interactionCreate', async (interaction) => {
-    try {
-      if (interaction.isChatInputCommand()) {
-        await client.slashHandler.handle(interaction);
-      } else if (interaction.isButton()) {
-        await client.buttonHandler.handle(interaction);
-      } else if (interaction.isStringSelectMenu()) {
-        await client.selectMenuHandler.handle(interaction);
-      } else if (interaction.isModalSubmit()) {
-        await client.modalHandler.handle(interaction);
-      } else if (interaction.isUserContextMenuCommand()) {
-        await client.userContextMenuHandler.handle(interaction);
-      } else if (interaction.isMessageContextMenuCommand()) {
-        await client.messageContextMenuHandler.handle(interaction);
-      }
-    } catch (err) {
-      // English logging for debugging
-      console.error('Error handling interaction:', err);
-      // Localized error response for the user
-      await replyError(interaction);
-    }
-  });
-
-  // 5) Load commands and login
-  try {
-    await loadCommands(client, env);
-    await client.login(process.env.DISCORD_TOKEN);
-    logger.info(`[startup] ✅ Bot logged in as ${client.user.tag}`);
-  } catch (err) {
-    logger.error(`[startup] Error starting bot: ${err.message}`, 'startup');
-    process.exit(1);
-  }
-
-  // 6) Handle unhandled promise rejections
-  process.on('unhandledRejection', (err) => {
-    logger.error(`Unhandled Rejection: ${err.message}`, 'runtime');
-  });
+// 0) Env‐sanity check
+const missing = ['DISCORD_TOKEN','MONGODB_URI','CLIENT_ID','GUILD_ID']
+  .filter(k => !process.env[k]);
+if (missing.length) {
+  logger.error(`Missing ENV vars: ${missing.join(', ')}`);
+  process.exit(1);
 }
 
-// Kick it all off
-main();
+// 0.1) Bot name & version from package.json
+const require = createRequire(import.meta.url);
+const { name: BOT_NAME, version: BOT_VERSION } = require('./package.json');
+logger.info(`▶ ${BOT_NAME} v${BOT_VERSION}`);
+
+// 0.2) Catch unhandled rejections & exceptions
+process
+  .on('unhandledRejection', e => logger.error('UnhandledRejection:', e))
+  .on('uncaughtException',  e => {
+    logger.error('UncaughtException:', e);
+    process.exit(1);
+  });
+
+async function main() {
+  logger.info('index.js loading…');
+
+  // 1) Connect to MongoDB
+  await connectDB();
+  logger.info('MongoDB connected');
+
+  // 2) Load & register every service under src/services/**
+  await loadServices();
+
+  // 3) Instantiate Discord client
+  const client = new Client({ intents: [ GatewayIntentBits.Guilds ] });
+  client.commands = client.commands || new Map();
+
+  // 4) Log Discord.js errors & warnings at the client level
+  client
+    .on('error', e => logger.error('[Discord.js] Client error:', e))
+    .on('warn',  w => logger.warn('[Discord.js] Client warn:', w));
+
+  // 5) Load & register slash commands
+  await loadCommands(client);
+
+  // 6) Load your button/modal/select/etc. handlers
+  await loadEventHandlers(client);
+
+  // 7) Wire up slash-command execution + permission guard
+  client.on(Events.InteractionCreate, async interaction => {
+    if (!interaction.isChatInputCommand()) return;
+    const cmd = client.commands.get(interaction.commandName);
+    if (!cmd) return;
+
+    const permissionService = getService('admin/permissionservice');
+    if (!(await permissionService.canExecute(interaction))) {
+      return replyError(interaction, 'ERRORS.permissionDenied');
+    }
+
+    try {
+     await cmd.execute(interaction);
+    } catch (err) {
+  logger.error(`/${interaction.commandName} execution error:`, err);
+
+  if (err?.rawError?.errors) {
+    logger.error('Discord API field errors:', err.rawError.errors);
+  }
+  await replyError(interaction, 'ERRORS.generic');
+}
+  });
+
+  // 8) Initialize & stash your AssetService
+  const assetServiceFactory = getService('admin/assetservice');
+  client.assetService = assetServiceFactory(client);
+
+  // 9) Kick off your scheduling loops (e.g. reminders)
+  initScheduling(client);
+
+  // 10) On ready: seed default permissions, then announce ready
+  client.once(Events.ClientReady, async () => {
+    const permissionService = getService('admin/permissionservice');
+    // Attach Discord client for asset lookups
+    permissionService.client = client;
+    for (const guild of client.guilds.cache.values()) {
+      await permissionService.seedDefaults(guild.id);
+    }
+    logger.info(t('LOG.botReady', { bot: client.user.tag }));
+  });
+
+  // 11) Finally, log in, log in
+  await client.login(process.env.DISCORD_TOKEN);
+}
+
+main().catch(err => {
+  logger.error('Startup error:', err);
+  process.exit(1);
+});
+

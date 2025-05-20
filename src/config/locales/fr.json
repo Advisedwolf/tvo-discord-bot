@@ -1,0 +1,78 @@
+{
+  "ping": {
+    "success": "Ping !"
+  },
+  "profile": {
+    "greeting": "Bonjour, {user } !"
+  },
+  "ERRORS": {
+    "title": "✘ Une erreur est survenue",
+    "invalidFormat": "⚠ Format invalide. Veuillez réessayer.",
+    "noResponse": "⌛ Aucune réponse reçue. Veuillez relancer `/onboarding` quand vous êtes prêt.",
+    "generic": "❌ Quelque chose s'est mal passé. Veuillez réessayer.",
+    "handler_not_found": "❌ Impossible de traiter cette interaction."
+  },
+  "COMMANDS": {
+    "debugAssets": {
+      "description":   "Afficher un résumé des salons et rôles synchronisés",
+      "title":         "🔍 Débogage du cache d’assets",
+      "channelsField": "Salons ({count})",
+      "rolesField":    "Rôles ({count})",
+      "none":          "_aucun_",
+      "error":         "Échec du débogage des assets. Veuillez réessayer."
+    },
+    "remind": {
+      "description": "Planifier un rappel ponctuel",
+      "categoryDesc": "Sélectionnez une catégorie de rappel",
+      "messageDesc": "De quoi dois-je vous rappeler ?",
+      "pickDateTime": "📅 Choisissez une date et ⏰ une heure pour votre rappel",
+      "pickYear":     "📅 Sélectionnez une année",
+      "pickMonth":    "📅 Sélectionnez un mois",
+      "pickDay":      "📅 Sélectionnez un jour",
+      "pickHour":     "⏰ Sélectionnez une heure",
+      "pickMinute":   "⏰ Sélectionnez une minute",
+      "successTitle":           "Rappel programmé !",
+      "successDescription":     "✅ Votre rappel (ID : {{id}}) est fixé au {{time}}.",
+      "error": {
+        "invalidDateTime": "Je n’ai pas pu analyser cette date et heure. Veuillez réessayer.",
+        "failed":          "Échec de la planification du rappel. Veuillez réessayer."
+      }
+    },
+    "reminders": {
+      "description": "Lister vos rappels à venir",
+      "noneTitle":   "Aucun rappel trouvé",
+      "noneDesc":    "Vous n’avez actuellement aucun rappel programmé.",
+      "listTitle":   "Vos rappels programmés",
+      "error":       "Échec de la récupération des rappels. Veuillez réessayer."
+    },
+    "cancelReminder": {
+      "description": "Annuler un de vos rappels programmés",
+      "indexDesc":     "Le numéro du rappel (depuis /reminders list)",
+      "invalidIndex":  "Ce numéro de rappel n’existe pas.",
+      "successTitle":  "Rappel annulé",
+      "successDescription": "Rappel avec l’ID {{id}} annulé.",
+      "error": "Échec de l’annulation du rappel. Veuillez réessayer."
+    },
+    "syncAssets": {
+      "description": "Synchroniser les IDs de catégories, salons, fils et rôles Discord dans l’asset store",
+      "success":     "✅ {{count}} assets synchronisés pour cette guilde.",
+      "error":       "Échec de la synchronisation des assets. Veuillez vérifier mes permissions."
+    }
+  },
+  "PERMS": {
+    "listTitle":        "Permissions des commandes",
+    "everyone":         "@tout-le-monde",
+    "noneConfigured":   "Aucune permission configurée.",
+    "addSuccessTitle":  "Permission ajoutée",
+    "addSuccessDesc":   "Le rôle {{role}} peut désormais utiliser /{{command}}.",
+    "removeSuccessTitle": "Permission supprimée",
+    "removeSuccessDesc":  "Le rôle {{role}} ne peut plus utiliser /{{command}}."
+  },
+  "UI": {
+    "selectYear":   "Année…",
+    "selectMonth":  "Mois…",
+    "selectDay":    "Jour…",
+    "selectHour":   "Heure…",
+    "selectMinute": "Minute…"
+  }
+}

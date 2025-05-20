@@ -1,0 +1,10 @@
+{
+  "ping": ["@everyone"],
+  "sync-assets": ["R5 - Server Owner", "R4 - Deputy Leaders"],
+  "debug-assets": ["R5 - Server Owner"],
+  "ban": ["R5 - Server Owner"],
+  "kick": ["R5 - Server Owner"],
+  "help": ["@everyone"],
+  "perms": ["R5 - Server Owner"],
+  "translate-test" : ["@everyone"]
+}

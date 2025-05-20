@@ -1,23 +1,14 @@
-// .eslintrc.js
-export default {
+module.exports = {
+  root: true,
   env: {
-    node: true,
-    es2021: true,
+    es2022: true,
+    node: true
   },
+  extends: ["standard"],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 2022,
+    sourceType: "module"
   },
-  extends: [
-    "standard"
-  ],
-  plugins: [
-    "import",
-    "node",
-    "promise"
-  ],
   rules: {
-    // any overrides you want, e.g.
-    // "no-console": "warn"
   }
 };
